@@ -1,0 +1,22 @@
+@import './portfolio.general.scss';
+
+.portfolio-subnav {
+
+  .callout {
+    padding-top:25px;
+    background:$colorIntroBackground;
+    color:$colorIntro;
+    z-index:5;
+  }
+
+  a {
+    color:$colorIntro;
+    text-decoration:none;
+  }
+
+  .subnav-active-element,
+  a:hover {
+    color:$colorIntro;
+    text-decoration:underline;
+  }
+}

@@ -1,0 +1,46 @@
+@import './portfolio.general.scss';
+
+.portfolio-domain-project > .grid-x > .menu {
+  position:relative;
+  top:1px;
+  z-index:100;
+  border:1px solid rgba(black, 0.25);
+  background:#eee;
+  padding-top:15px;
+
+  li {
+    display:inline-block;
+    margin-left: 10px;
+  }
+
+  li.active {
+    position:relative;
+    top:1px;
+    background:white;
+    padding:0;
+    text-align:center;
+    border:1px solid rgba(black, 0.25);
+    border-bottom:none;
+    a {
+      background:white;
+      color:$colorPrimary;
+    }
+  }
+}
+
+.portfolio-domain-project > .grid-x > .callout {
+	@media screen and (max-width: 63.938em ) {
+    padding-left: 0;
+    padding-right: 0;
+  } 
+}
+
+.portfolio-domain-project .close-button {
+  font-size: 1.2em;
+  @media screen and (min-width: 30em) {
+    font-size: 1.7em;
+  }
+  @media screen and (min-width: 40em) {
+    font-size: 2em;
+  }
+}

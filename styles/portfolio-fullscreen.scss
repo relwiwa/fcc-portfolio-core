@@ -1,0 +1,22 @@
+@import './portfolio.general.scss';
+
+body.fullScreen {
+  background: no-repeat fixed linear-gradient(200deg, $colorBackground1 60%, $colorBackground2 40%);  
+
+  .portfolio-header {
+    display: none;
+  }
+
+  .portfolio-subnav {
+    display: none;
+  }
+
+  .portfolio-main {
+    background: 'none';
+    margin-top: 20px;
+  }
+
+  .portfolio-footer {
+    display:none;
+  }
+}
