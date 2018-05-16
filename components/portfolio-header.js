@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import React, { Component, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import '../styles/portfolio-header.scss';
@@ -12,15 +13,15 @@ class PortfolioHeader extends Component {
   }
 
   renderNavLink(item) {
-    const { route, title } = item;
+    const { icon, route, title } = item;
 
     return (
-      <li key={title}>
+      <li key={title} className="text-center">
         <NavLink
           activeClassName='nav-active-element'
           to={'/' + route}
           title={'Go to ' + title + ' Projects Page'}
-        >{title + ' Projects'}</NavLink>
+        >{<Fragment><FontAwesomeIcon icon={icon} /> {title}</Fragment>}</NavLink>
       </li>
     )
   }
@@ -55,26 +56,26 @@ class PortfolioHeader extends Component {
             type="button"
             onClick={() => this.toggleNavigation()}
           >
-            <span aria-hidden="true"><i className="fa fa-bars"></i></span>
+            <span aria-hidden="true"><FontAwesomeIcon icon="bars" /></span>
           </button>
           <nav className={'cell medium-10' + (!this.state.showNavigation ? ' hide-for-small-only' : '')}>
             <ul className="menu vertical medium-expanded medium-horizontal align-center">
               {projectsData.map((item) => this.renderNavLink(item))}
-              <li>
+              <li className="text-center">
                 <NavLink
                   activeClassName='nav-active-element'
                   exact
                   to='/about'
                   title="Go to About Page"
-                >About</NavLink>
+                ><FontAwesomeIcon icon="info-circle" /> About</NavLink>
               </li>
-              <li>
+              <li className="text-center">
                 <NavLink
                   activeClassName='nav-active-element'
                   exact
                   to='/contact'
                   title="Go to Contact Page"
-                >Contact</NavLink>
+                ><FontAwesomeIcon icon="envelope" /> Contact</NavLink>
               </li>
             </ul>
           </nav>

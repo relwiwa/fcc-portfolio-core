@@ -172,6 +172,10 @@ const portfolioData = {
       "domain": "frontend",
       "route": "frontend-projects",
       "title": "Frontend",
+      "icon": (() => {
+        const icons = ['desktop', 'laptop', 'mobile-alt', 'tablet-alt', 'tv'];
+        return icons[Math.floor(Math.random() * icons.length)];
+      })(),
       "description": "I built the first projects in vanilla Javascript, jQuery and AngularJS. With Angular(2) around, I checked out React and sticked with it. This Portfolio contains all the React-based Frontend Projects I have done, live: Demonstrating the composite nature of React components.",
 //      "description": "I started building some frontend projects in vanilla Javascript and jQuery following an MVC approach. Other projects I implemented using AngularJS. Finally, I read about integrating the less-powerful HTML into the more powerful Javascript as it is done in React/JSX, and that got me stuck with React/Redux. This Portfolio contains all the React-based projects - demonstrating the composable nature of React components.",
       "lessonsLearned": [
@@ -671,7 +675,8 @@ const portfolioData = {
     }, {
       "domain": "d3",
       "route": "d3-projects",
-      "title": "D3",
+      "title": "Data Viz",
+      "icon": "chart-line",
       "description": "All of the Data Visualization projects were implemented using D3. Based on Udacity's Data Visualization and D3 course, I built the first projects focused on presenting the data with author- and user-driven narratives. The focus then changed to integrating React and D3: I iterated over several configurations of tasks between D3, React and CSS to find the most efficient way of rendering the interactive charts.",
       "lessonsLearned": [
         "Getting to know D3's various libraries",
