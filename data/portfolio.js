@@ -1,7 +1,44 @@
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import React, { Fragment } from 'react';
+
+import IconLink from '../../reusable-components/icon-link';
+
+import logoFreeCodeCamp from '../images/about/logo-free-code-camp.png';
+
+const renderFaIconWithText = (icon, text) => <nobr><FontAwesomeIcon icon={icon} /> {text}</nobr>;
+
 const portfolioData = {
   "about": {
     "sections": [
       {
+        "title": "Curious Javascript Developer",
+        "description": [
+          <Fragment>My name is {renderFaIconWithText('user', 'Walter')}, and I have been into Web Development for 10+ years.</Fragment>,
+          "I have always loved gaining knowledge autodidactically and transfer the skills to professional experiences",
+          <Fragment>Recently, I caught up with all the great things that have been going on within the {renderFaIconWithText(['fab', 'js-square'], 'Javascript')} universe via {renderFaIconWithText(['fab', 'free-code-camp'], 'FreeCodeCamp\'s Certification')}</Fragment>,
+          <Fragment>During that time, I kind of fell in <FontAwesomeIcon icon="heart" /> with {renderFaIconWithText(['fab', 'react'], 'React')}</Fragment>,
+  //            "I am also a flight attendant, and in general, I am always curious to discover and learn new things, places, languages, etc.",
+        ],
+        "image": {
+          "url": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1495711829/portfolio-page/walter-machu-picchu.jpg",            
+        }
+      },
+      {
+        "title": "freeCodeCamp",
+        "description": [
+          <Fragment><IconLink link="https://freecodecamp.org" icon={['fab', 'free-code-camp']} text="freeCodeCamp" /> is a non-profit community whose mission is to make people around the world learn to code</Fragment>,
+  //            "You build projects in order to achieve one of the certificates in the areas Frontend, Data Visualization and Backend",
+          <Fragment>The technology stack clearly focuses on {renderFaIconWithText(['fab', 'js-square'], 'Javascript')}, and the usage of {renderFaIconWithText(['fab', 'react'], 'React')}, {renderFaIconWithText('chart-area', 'D3')}, and {renderFaIconWithText(['fab', 'node-js'], 'Node')}</Fragment>,
+  //          "Based on the certificates, you will gain even more experience in non-profit, open source projects",
+          <Fragment>In our weekly <IconLink link="https://www.facebook.com/groups/free.code.camp.lisbon" icon={['fab', 'free-code-camp']} text="freeCodeCamp Lisbon" /> meeting, we support each other, do workshops and non-profit projects</Fragment>,
+          <Fragment>It was initiated by <IconLink link="https://www.pedropcruz.pt" icon="user" text="Pedro" /> and <IconLink link="https://www.facebook.com/forra.luis" icon="user" text="Luis" /> and I've become one of the admins</Fragment>,
+        ],
+        "image": {
+          "url": logoFreeCodeCamp,
+        }
+      },       
+
+/*      {
         "title": "Javascript Developer",
         "description": [
           "Web Development has been part of my life for more than 15 years",
@@ -28,7 +65,7 @@ const portfolioData = {
           "url": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1495711829/portfolio-page/walter-machu-picchu.jpg"
         }
 
-      }
+      }*/
     ]
   },
   "intro": {

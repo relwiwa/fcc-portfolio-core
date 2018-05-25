@@ -1,8 +1,11 @@
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 import CardImageWithFigCaption from '../../../reusable-components/card-image-with-fig-caption';
 import PortfolioCard from '../../../reusable-components/portfolio-card';
 import PortfolioSection from '../../../reusable-components/portfolio-section';
+
+import '../../styles/portfolio-about.scss';
 
 const PortfolioAbout = ({ aboutData }) => {
 
@@ -11,7 +14,7 @@ const PortfolioAbout = ({ aboutData }) => {
 
     return(
       <PortfolioCard
-        key={section.title}
+        key={title}
         cardText={description}
       >
         <CardImageWithFigCaption
@@ -24,8 +27,8 @@ const PortfolioAbout = ({ aboutData }) => {
 
   return <div className="portfolio-about grid-container grid-container-padded" id="portfolio-about">
     <PortfolioSection
-      subTitle="hello world"
-      title="About"
+      subTitle={<FontAwesomeIcon icon={['fab', 'free-code-camp']} />}
+      title="freeCodeCamper Walter"
     >
       <div className="grid-x grid-margin-x grid-margin-y medium-up-2 align-stretch">
         {aboutData['sections'].map((section) => renderAboutSection(section))}
