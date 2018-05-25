@@ -10,22 +10,22 @@ import '../../styles/portfolio-projects.scss';
 
 const PortfolioProjects = ({ projectsData }) => {
   const renderCategory = (specs) => {
-    const { description, lessonsLearned, projects, route: domainRoute, title, website } = specs;
+    const { description, icon, lessonsLearned, projects, route: domainRoute, title, website } = specs;
     const orbitSpecs = setupOrbitSpecs(domainRoute, projects);
 
-    return <div style={{position: 'relative', boxShadow: '0 0 20px gray', marginBottom: 15}} className="cell medium-6" key={title}>
-      <ImageOrbit orbitSpecs={orbitSpecs} />
-      <div style={{padding: '1rem', paddingBottom: 55}}>
+    return <div style={{position: 'relative', boxShadow: '0 0 20px gray', background: 'green', padding: 0, marginBottom: 15}} className="cell medium-6" key={title}>
+      <Link
+        to={'/' + domainRoute}
+        style={{position:'absolute', top: 0, left: 0, right: 0, marginBottom: 0}}
+        className="button large primary expanded"
+        title={'Go to ' + title + ' Projects'}
+      >
+        <FontAwesomeIcon icon={icon} /> {title} Projects
+      </Link>
+      <div style={{paddingTop: 40}}>
         {description.split('.').map((item) => <p className="text-center" key={item.substr(0, 8)}>{item}</p>)}
       </div>
-        <Link
-          style={{position:'absolute', bottom: 0, left: 0, right: 0, marginBottom: 0}}
-          to={'/' + domainRoute}
-          className="button large primary expanded"
-          title={'Go to ' + title + ' Projects'}
-        >
-          {title} Projects
-        </Link>
+      <ImageOrbit orbitSpecs={orbitSpecs} />
     </div>;
   };
 

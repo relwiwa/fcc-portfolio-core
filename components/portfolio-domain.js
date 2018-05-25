@@ -9,14 +9,13 @@ class PortfolioDomain extends Component {
 
   render() {
     const { domainData } = this.props;
-    const { description, projects, route, title } = domainData;
+    const { projects, route, title } = domainData;
 
     return <div className="portfolio-projects grid-container grid-container-padded" id="portfolio-projects">
       <PortfolioSection
         subTitle={title}
         title="Projects"
       >
-        {description.split('.').map((item) => <p key={item.substr(0, 5)}>{item}</p>)}
         <div className="grid-x align-stretch medium-up-2 large-up-3 grid-margin-x grid-margin-y">
           {projects.map((project) => {
             if (!project.externalOnly) {
