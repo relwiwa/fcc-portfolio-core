@@ -5,6 +5,18 @@ import IconLink from '../../reusable-components/icon-link';
 
 import logoFreeCodeCamp from '../images/about/logo-free-code-camp.png';
 
+import barChartScreenshot from '../images/screenshots/bar-chart.gif';
+import forceGraphScreenshot from '../images/screenshots/force-graph.gif';
+import heatMapScreenshot from '../images/screenshots/heat-map.gif';
+import leaderboardScreenshot from '../images/screenshots/leaderboard.gif';
+import lifeScreenshot from '../images/screenshots/life.gif';
+import markdownPreviewerScreenshot from '../images/screenshots/markdown-previewer.gif';
+import meteoriteMapScreenshot from '../images/screenshots/meteorite-map.gif';
+import recipeBoxScreenshot from '../images/screenshots/recipe-box.gif';
+import simonGameScreenshot from '../images/screenshots/simon-game.gif';
+import ticTacToeScreenshot from '../images/screenshots/tic-tac-toe.gif';
+import wikipediaViewerScreenshot from '../images/screenshots/wikipedia-viewer.gif';
+
 const renderFaIconWithText = (icon, text) => <nobr><FontAwesomeIcon icon={icon} /> {text}</nobr>;
 
 const portfolioData = {
@@ -215,19 +227,19 @@ const portfolioData = {
       })(),
       "description": "", //"I built the first projects in vanilla Javascript, jQuery and AngularJS. With Angular(2) around, I checked out React and sticked with it. This Portfolio contains all the React-based Frontend Projects I have done, live: Demonstrating the composite nature of React components.",
 //      "description": "I started building some frontend projects in vanilla Javascript and jQuery following an MVC approach. Other projects I implemented using AngularJS. Finally, I read about integrating the less-powerful HTML into the more powerful Javascript as it is done in React/JSX, and that got me stuck with React/Redux. This Portfolio contains all the React-based projects - demonstrating the composable nature of React components.",
-      "lessonsLearned": [
+/*       "lessonsLearned": [
         "Getting Foundation's Javascript components work with React",
         "Consumption of external API data",
         "Dealing with audio restrictions on mobile devices",
         "Gulp and Webpack workflows"
       ],
       "website": "",
-      "projects": [
+ */      "projects": [
         {
           "title": "Simon Game",
           "route": "simon-game",
           "information": "This Simon Game is not just responsive, also its sounds work on mobile, thanks to audio sprites. Why don't you give it a try and try to remember the full sequence?",
-          "screenshot": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1495561710/portfolio-page/simon-game.png",
+          "screenshot": simonGameScreenshot,
           "userStories": [
             {
               "description": "I am presented with a random series of button presses",
@@ -255,7 +267,7 @@ const portfolioData = {
               "icon": "bolt"
             } 
           ],
-          "sources": [
+/*           "sources": [
             {
               "url": "http://soundbible.com/1003-Ta-Da.html",
               "licence": "Attribution 3.0 licence"
@@ -264,7 +276,7 @@ const portfolioData = {
               "licence": "Attribution 3.0 licence"
             }
           ],
-          "links": {
+ */          "links": {
             "freecodecamp": "https://www.freecodecamp.com/challenges/build-a-simon-game",
             "codepen": "https://codepen.io/relwiwa/pen/WwXrRe",
             "github": "https://github.com/relwiwa/fcc-simon-game",
@@ -273,7 +285,7 @@ const portfolioData = {
         }, {
           "title": "Life",
           "route": "life",
-          "screenshot": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1503172886/portfolio-page/game-of-life.png",
+          "screenshot": lifeScreenshot,
           "information": "Setup a population and watch how it evolve from generation to generation following the rules set out by Conway and his Game of Life",
           "userStories": [
             {
@@ -306,7 +318,7 @@ const portfolioData = {
           "title": "Recipe Box",
           "route": "recipe-box",
           "information": "Recipe Box lets you manage your recipes, filter them, and store them in your local storage",
-          "screenshot": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1523359271/portfolio-page/recipe-box.png",
+          "screenshot": recipeBoxScreenshot,
           "userStories": [
             {
               "description": "I can create recipes that have names and ingredients",
@@ -337,10 +349,10 @@ const portfolioData = {
         }, {
           "title": "Wikipedia Viewer",
           "route": "wikipedia-viewer",
-          "statement": "Data, turn equalize by row on",
+//          "statement": "Data, turn equalize by row on",
           "information": "Get previews of Wikipedia entries with this Wikipedia Viewer, that is using Wikipedia's API",
-          "description": "I wanted to achieve the effect of equal height columns without having to use Foundation's flex grid to maintain IE9 compatibility. For this, I used Foundation's Equalizer plugin. This meant learning how to integrate it both into React's component lifecycle and Webpack via Script Loader.",
-          "screenshot": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1495561710/portfolio-page/wikipedia-viewer.png",
+//          "description": "I wanted to achieve the effect of equal height columns without having to use Foundation's flex grid to maintain IE9 compatibility. For this, I used Foundation's Equalizer plugin. This meant learning how to integrate it both into React's component lifecycle and Webpack via Script Loader.",
+          "screenshot": wikipediaViewerScreenshot,
           "userStories": [
             {
               "description": "I can search Wikipedia entries in a search box and see the resulting Wikipedia entries",
@@ -350,7 +362,7 @@ const portfolioData = {
               "icon": "random"
             }
           ],
-          "technologies": [
+/*           "technologies": [
             "ES6",
             { "Foundation": ["Equalizer Plugin"] },
             { "Javascript": ["JSONP"] },
@@ -386,7 +398,7 @@ const portfolioData = {
               ]
             }
           ],          
-          "links": {
+ */          "links": {
             "freecodecamp": "https://www.freecodecamp.com/challenges/build-a-wikipedia-viewer",
             "codepen": "https://codepen.io/relwiwa/pen/KzwKBX",
             "github": "https://github.com/relwiwa/fcc-wikipedia-viewer",
@@ -395,11 +407,11 @@ const portfolioData = {
         }, {
           "title": "Tic Tac Toe",
           "route": "tic-tac-toe",
-          "screenshot": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1503560574/portfolio-page/tic-tac-toe.png",
-          "mockup": "",
-          "statement": "Set Vertical Padding To Horizontal Width And You Got Reponsive Squares",
+          "screenshot": ticTacToeScreenshot,
+//          "mockup": "",
+//          "statement": "Set Vertical Padding To Horizontal Width And You Got Reponsive Squares",
           "information": "The classic Tic Tac Toe game, implemented responsively with all of the UI within the nine fields of the board",
-          "description": "A responsive implementation of the classic Tic Tac Toe Game",
+  //        "description": "A responsive implementation of the classic Tic Tac Toe Game",
           "userStories": [
             {
               "description": "I can play a game of Tic Tac Toe with the computer",
@@ -412,7 +424,7 @@ const portfolioData = {
               "icon": "exchange-alt"
             }
           ],
-          "lessonsLearned": [
+/*           "lessonsLearned": [
             {
               "lesson": "Use Minimax algorithm to implement AI",
               "technologies": [{ "Algorithms": "Minimax" }]
@@ -454,7 +466,7 @@ const portfolioData = {
             { "Responsive Design": [ "Mobile First" ] },
             "UI Design"
           ],
-          "links": {
+ */          "links": {
             "freecodecamp": "https://www.freecodecamp.com/challenges/build-a-tic-tac-toe-game",
             "codepen": "https://codepen.io/relwiwa/pen/GqoZZG",
             "github": "https://github.com/relwiwa/fcc-tic-tac-toe",
@@ -463,11 +475,11 @@ const portfolioData = {
         }, {
           "title": "Markdown Previewer",
           "route": "markdown-previewer",
-          "screenshot": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1495561374/portfolio-page/markdown-previewer.png",
-          "mockup": "",
-          "statement": "Yes, dangerouslySetInnerHtml",
+          "screenshot": markdownPreviewerScreenshot,
+//          "mockup": "",
+//          "statement": "Yes, dangerouslySetInnerHtml",
           "information": "Enter Github-flavored Markdown and immediately see a live preview of the output",
-          "description": "Let's you see a live preview of the markdown you enter",
+//          "description": "Let's you see a live preview of the markdown you enter",
           "userStories": [
             {
               "description": "I can type GitHub-flavored Markdown into a text area",
@@ -477,7 +489,7 @@ const portfolioData = {
               "icon": "sign-out-alt"
             }
           ],
-          "technologies": [
+  /*         "technologies": [
             { "CSS": ["Flexbox"] },
             "ES6",
             "Bootstrap",
@@ -508,13 +520,13 @@ const portfolioData = {
               "technologies": ["Marked"]
             }
           ],
-          "links": {
+   */        "links": {
             "freecodecamp": "https://www.freecodecamp.org/challenges/build-a-markdown-previewer",
             "github": "https://github.com/relwiwa/fcc-markdown",
             "codepen": "https://codepen.io/relwiwa/pen/xLKwRM",
             "github.io": "https://relwiwa.github.io/fcc-markdown"
           },
-          "alternative": {
+  /*         "alternative": {
             "technologies": [
               { "CSS": ["Flexbox"] },
               "ES6",
@@ -537,13 +549,13 @@ const portfolioData = {
               "codepen": "https://codepen.io/relwiwa/pen/XarmPG"
             }
           }          
-        }, {
+   */      }, {
           "title": "Leaderboard",
           "route": "leaderboard",
-          "screenshot": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1502691228/portfolio-page/leaderboard.png",
-          "mockup": "",
-          "statement": "Let's Add A Pagination Feature To This Leaderboard",
-          "information": "A Leaderboard featuring the top 100 FreeCodeCampers. It features pagination and sorting.",
+          "screenshot": leaderboardScreenshot,
+//          "mockup": "",
+//          "statement": "Let's Add A Pagination Feature To This Leaderboard",
+//          "information": "A Leaderboard featuring the top 100 FreeCodeCampers. It features pagination and sorting.",
           "description": "A Leaderboard showing the top 100 FreeCodeCampers. It features pagination and sorting.",
           "userStories": [
             {
@@ -557,7 +569,7 @@ const portfolioData = {
               "icon": "sort"
             }
           ],
-          "technologies": [
+  /*         "technologies": [
             { "CSS": ["Flexbox"] },
             "ES6",
             "Bootstrap",
@@ -589,13 +601,13 @@ const portfolioData = {
               "tools": ["Balsamiq"]
             }
           ],
-          "links": {
+   */        "links": {
             "freecodecamp": "https://www.freecodecamp.org/challenges/build-a-camper-leaderboard",
             "codepen": "https://codepen.io/relwiwa/pen/brbNvO",
             "github": "https://github.com/relwiwa/fcc-leaderboard",
             "github.io": "https://relwiwa.github.io/fcc-leaderboard"
           },
-          "alternative": {
+/*           "alternative": {
             "technologies": [
               { "CSS": ["Flexbox"] },
               "ES6",
@@ -620,7 +632,7 @@ const portfolioData = {
               "codepen": "https://codepen.io/relwiwa/pen/gRNzPK"
             }
           }          
-        }, /*, {
+ */        }, /*, {
           "title": "Pomodoro Clock",
           "route": "pomodoro-clock",
           "externalOnly": true,
@@ -718,21 +730,21 @@ const portfolioData = {
         return icons[Math.floor(Math.random() * icons.length)];
       })(),
       "description": "", // "All of the Data Visualization projects were implemented using D3. Based on Udacity's Data Visualization and D3 course, I built the first projects focused on presenting the data with author- and user-driven narratives. The focus then changed to integrating React and D3: I iterated over several configurations of tasks between D3, React and CSS to find the most efficient way of rendering the interactive charts.",
-      "lessonsLearned": [
+/*       "lessonsLearned": [
         "Getting to know D3's various libraries",
         "Making SVG charts responsive",
         "Creating author- and user-driven data narratives",
         "Optimize the interplay between D3 and React"
       ],
       "website": "",
-      "projects": [
+ */      "projects": [
  {
           "title": "Meteorite Map",
           "route": "meteorite-map",
-          "screenshot": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1498217818/portfolio-page/portfolio-map.png",
-          "statement": "Now how do I get Antarctica off this map",
+          "screenshot": meteoriteMapScreenshot,
+//          "statement": "Now how do I get Antarctica off this map",
           "information": "An interactive map displaying meteorite strikes across the world between 1400 up until now",
-          "description": "The challenging part in this project was to find the right allocation of tasks between D3 and React. So D3 was used to calculate the map and meteorite strikes. React got to render this data. To prevent massive re-renders, I explored React's PureComponent and shouldComponentUpdate. During the initial author-driven narrative, I came to use an interval- and CSS-based approach to display the meteorite strikes. And I got Antarctica off the map.",
+//          "description": "The challenging part in this project was to find the right allocation of tasks between D3 and React. So D3 was used to calculate the map and meteorite strikes. React got to render this data. To prevent massive re-renders, I explored React's PureComponent and shouldComponentUpdate. During the initial author-driven narrative, I came to use an interval- and CSS-based approach to display the meteorite strikes. And I got Antarctica off the map.",
           "userStories": [
             {
               "description": "I can see where all Meteorites landed on a world map",
@@ -745,7 +757,7 @@ const portfolioData = {
               "icon": "mouse-pointer"
             }            
           ],
-          "sources": [
+  /*         "sources": [
             {
               "source": "Natural Earth",
               "description": "SHP files of world map that were converted to GeoJSON and TopoJson data using GDAL",
@@ -809,7 +821,7 @@ const portfolioData = {
               "technologies": ["D3", "D3 Geo"]
             }
           ],
-          "links": {
+   */        "links": {
             "freecodecamp": "https://www.freecodecamp.com/challenges/map-data-across-the-globe",
             "codepen": "https://codepen.io/relwiwa/pen/eEdxKe",
             "github": "https://github.com/relwiwa/fcc-meteorite-map",
@@ -818,10 +830,10 @@ const portfolioData = {
         }, {
           "title": "Bar Chart",
           "route": "bar-chart",
-          "screenshot": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1495567607/portfolio-page/barchart.png",
-          "statement": "No, this component still shouldNotUpdate",
+          "screenshot": barChartScreenshot,
+  //        "statement": "No, this component still shouldNotUpdate",
           "information": "Quarterly US GDP Data represented in a Bar Chart",
-          "description": "It was the first time I ever used D3, right after Udacity's Data Visualization course. The first implementation focused on getting to know D3 and how to animate data on entry. The second focused on creating a responsive bar chart and optimizing the interplay between React and D3.",
+//          "description": "It was the first time I ever used D3, right after Udacity's Data Visualization course. The first implementation focused on getting to know D3 and how to animate data on entry. The second focused on creating a responsive bar chart and optimizing the interplay between React and D3.",
           "userStories": [
             {
               "description": "I can see US Gross Domestic Product by quarter, over time",
@@ -831,7 +843,7 @@ const portfolioData = {
               "icon": "mouse-pointer"
             }            
           ],
-          "sources": [
+/*           "sources": [
             {
               "source": "Federal Reserve Bank of St. Louis",
               "description": "Quarterly Gross Domestic Product",
@@ -868,13 +880,13 @@ const portfolioData = {
               "topics": ["Data Visualization"]
             }
           ],
-          "links": {
+ */          "links": {
             "freecodecamp": "https://www.freecodecamp.com/challenges/visualize-data-with-a-bar-chart",
             "codepen": "https://codepen.io/relwiwa/pen/zoVjxJ",
             "github": "https://github.com/relwiwa/fcc-us-gdp-chart",
             "github.io": "https://relwiwa.github.io/fcc-us-gdp-chart"
           },
-          "alternative": {
+/*           "alternative": {
             "technologies": ["D3", "SVG"],
             "tools": ["Gulp"],
             "lessonsLearned":[
@@ -890,7 +902,7 @@ const portfolioData = {
               }
             ]
           }
-        }, /*{
+ */        }, /*{
           "title": "Scatterplot Graph",
           "route": "scatterplot-graph",
           "externalOnly": true,
@@ -898,10 +910,10 @@ const portfolioData = {
         },*/ {
           "title": "Heat Map",
           "route": "heat-map",
-          "screenshot": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1498215166/portfolio-page/heat-map.png",          
-          "statement": "Hexagons, you look pretty, but aren't good for a cell by cell comparison",
+          "screenshot": heatMapScreenshot,          
+//          "statement": "Hexagons, you look pretty, but aren't good for a cell by cell comparison",
           "information": "Global monthly temperatures put into a Heat Map",
-          "description": "I implemented the Heat Map based on the React/D3/CSS configuration I came up with from the previous projects. Initially, I used hexagons to represent the data - they looked pretty, but made a cell by cell comparison difficult, so I switched back to regular cells. My implementation does not fit one page, so you cannot directly see the overall tendency at one glance. On the other hand, on the way there, each cell is big enough to make its data accessible.",
+//          "description": "I implemented the Heat Map based on the React/D3/CSS configuration I came up with from the previous projects. Initially, I used hexagons to represent the data - they looked pretty, but made a cell by cell comparison difficult, so I switched back to regular cells. My implementation does not fit one page, so you cannot directly see the overall tendency at one glance. On the other hand, on the way there, each cell is big enough to make its data accessible.",
           "userStories": [
             {
               "description": "I can view a heat map with data represented both on the Y and X axis",
@@ -914,7 +926,7 @@ const portfolioData = {
               "icon": "mouse-pointer"
             }
           ],
-          "lessonsLearned":[
+  /*         "lessonsLearned":[
             {
               "lesson": "Create a responsive SVG-based Heat Map combining D3, React and CSS",
               "technologies": ["React", "CSS", "D3", "SVG"],
@@ -966,7 +978,7 @@ const portfolioData = {
               "url": "https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json"
             }
           ],
-          "links": {
+   */        "links": {
             "freecodecamp": "https://www.freecodecamp.com/challenges/visualize-data-with-a-heat-map",
             "codepen": "https://codepen.io/relwiwa/pen/ZJpmrm",
             "github": "https://github.com/relwiwa/fcc-heat-map",
@@ -975,10 +987,10 @@ const portfolioData = {
         }, {
           "title": "Force Directed Graph",
           "route": "force-graph",
-          "screenshot": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1502691023/portfolio-page/force-graph.png",
-          "statement": "All of a sudden, there was a horizontal scrollbar",
+          "screenshot": forceGraphScreenshot,
+  //        "statement": "All of a sudden, there was a horizontal scrollbar",
           "information": "Border relationships between countries represented as a Force Directed Graph",
-          "description": "There were two things I battled with in this project: First, setting the force graph's properties to be responsive. Second, dealing with a horizontal scrollbar, that appeared only after the SVG got its (height) dimensions set and rendered. I also learned about actions on mobile that unexpectedly trigger a resize event (for example show/hide address bar).",
+//          "description": "There were two things I battled with in this project: First, setting the force graph's properties to be responsive. Second, dealing with a horizontal scrollbar, that appeared only after the SVG got its (height) dimensions set and rendered. I also learned about actions on mobile that unexpectedly trigger a resize event (for example show/hide address bar).",
           "userStories": [
             {
               "description": "I can see a force-directed Graph that shows which countries share borders",
@@ -988,7 +1000,7 @@ const portfolioData = {
               "icon": "flag"
             }
           ],
-          "technologies": [
+  /*         "technologies": [
             "CSS",
             { "D3": ["D3 Force Layout"] },
             "ES6",
@@ -1019,7 +1031,7 @@ const portfolioData = {
               "topics": ["Mobile Development"]
             }
           ],
-          "links": {
+   */        "links": {
             "freecodecamp": "https://www.freecodecamp.com/challenges/show-national-contiguity-with-a-force-directed-graph",
             "codepen": "https://codepen.io/relwiwa/pen/XaNrXR",
             "github": "https://github.com/relwiwa/fcc-force-graph",
