@@ -12,7 +12,7 @@ const PortfolioContact = (props) => {
     <PortfolioCard
       cardText={[description]}
     >
-      <div className="text-center" style={{background: '#1779ba', padding: '1rem', color: '#fefefe'}}>
+      <div className="contact-item text-center">
           {title}
       </div>
       <div

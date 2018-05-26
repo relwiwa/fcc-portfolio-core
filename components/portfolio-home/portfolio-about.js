@@ -5,8 +5,6 @@ import CardImageWithFigCaption from '../../../reusable-components/card-image-wit
 import PortfolioCard from '../../../reusable-components/portfolio-card';
 import PortfolioSection from '../../../reusable-components/portfolio-section';
 
-import '../../styles/portfolio-about.scss';
-
 const PortfolioAbout = ({ aboutData }) => {
 
   const renderAboutSection = (section) => {

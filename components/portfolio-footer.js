@@ -1,3 +1,4 @@
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -15,7 +16,7 @@ const PortfolioFooter = (props) => {
           <NavLink
             to={'/contact'}
             title={'Go to Contact Section'}
-          >Contact</NavLink>
+          ><FontAwesomeIcon icon="envelope" /> Contact</NavLink>
         </h6>
         <ul className="no-bullet">
           {domains.map(domain => {
@@ -39,7 +40,7 @@ const PortfolioFooter = (props) => {
           <NavLink
             to={'/' + domain + '-projects'}
             title={'Go to ' + domain + ' projects page'}
-          >{title} Projects</NavLink>
+          ><FontAwesomeIcon icon={category.icon} /> {title} Projects</NavLink>
         </h6>
         <ul className="no-bullet">
           {projects.map((project) => (

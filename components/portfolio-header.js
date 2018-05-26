@@ -2,6 +2,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import React, { Component, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import relwiwaLogoFcc from '../images/relwiwa-logo-fcc.svg';
 import '../styles/portfolio-header.scss';
 
 class PortfolioHeader extends Component {
@@ -43,7 +44,7 @@ class PortfolioHeader extends Component {
               exact
               to='/'
             >
-              <img src="https://res.cloudinary.com/dqzrtsqol/image/upload/v1495559680/portfolio-page/relwiwa-logo.svg" alt="Logo" /><br />
+              <img src={relwiwaLogoFcc} alt="Logo" /><br />
             </NavLink>
             <NavLink
               exact

@@ -6,14 +6,12 @@ import IconLink from '../../../reusable-components/icon-link';
 import ImageOrbit from '../../../reusable-components/image-orbit';
 import PortfolioSection from '../../../reusable-components/portfolio-section';
 
-import '../../styles/portfolio-projects.scss';
-
 const PortfolioProjects = ({ projectsData }) => {
   const renderCategory = (specs) => {
     const { description, icon, lessonsLearned, projects, route: domainRoute, title, website } = specs;
     const orbitSpecs = setupOrbitSpecs(domainRoute, projects);
 
-    return <div style={{position: 'relative', boxShadow: '0 0 20px gray', background: 'green', padding: 0, marginBottom: 15}} className="cell medium-6" key={title}>
+    return <div style={{position: 'relative', boxShadow: '0 0 20px gray', padding: 0, marginBottom: 15}} className="cell medium-6" key={title}>
       <Link
         to={'/' + domainRoute}
         style={{position:'absolute', top: 0, left: 0, right: 0, marginBottom: 0}}

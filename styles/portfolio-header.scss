@@ -9,8 +9,6 @@
     padding-left:20px;
   }
 
-
-
   nav {    
     .menu a {
       padding: 0.7rem 0.8rem
@@ -30,14 +28,16 @@
     cursor:pointer;
     font-size:1em;
     margin-top:76px;
-    color:$colorPrimary;
+    color:$primaryColor;
   }
 }
 
 .portfolio-logo {
   img {
-    width:80px;
-    height:80px;    
+    width:75px;
+    height:75px;
+    top:5px;
+    margin-bottom: 5px;   
     @media screen and (min-width: 40em) {
       position:relative;
       left:5px;
@@ -46,6 +46,7 @@
 
   a {
     font-size:1.2em;
-    color:$colorPrimary;
+    text-decoration: none;
+    color:$primaryColor;
   }
 }

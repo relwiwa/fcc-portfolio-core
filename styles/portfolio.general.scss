@@ -1,12 +1,12 @@
-$colorPrimary:              #1779ba;
+@import '../../styles/color-scheme.scss';
 
 $colorBackground1:          #ffed4b;
 $colorBackground2:          #fdcd3b;
 
 $colorHeaderBackground:     #ffffff;
 
-$colorIntro:                #ffffff;
-$colorIntroBackground:      #075587;
+$colorIntro:                $textColorLight;
+$colorIntroBackground:      $primaryColorDark;
 
-$colorFooter:               #000;
-$colorFooterBackground:     #ddd;
+$colorFooter:               $textColorDark;
+$colorFooterBackground:     $grayColorLight;
