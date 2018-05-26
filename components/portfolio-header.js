@@ -44,7 +44,7 @@ class PortfolioHeader extends Component {
               exact
               to='/'
             >
-              <img src={relwiwaLogoFcc} alt="Logo" /><br />
+              <img src="https://res.cloudinary.com/dqzrtsqol/image/upload/v1527355092/portfolio-page/relwiwa-logo-fcc.svg" alt="Logo" /><br />
             </NavLink>
             <NavLink
               exact
