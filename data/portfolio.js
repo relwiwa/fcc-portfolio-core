@@ -153,7 +153,7 @@ const portfolioData = {
         {
           "title": "FreeCodeCamp",
           "description": "Visit My FreeCodeCamp Profile",
-          "url": "https://freecodecamp.com/relwiwa",
+          "url": "https://www.freecodecamp.org/portfolio/relwiwa",
           "image": {
             "url": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1495700867/brand-icons/freecodecamp.png",
             "source": "https://blog.codepen.io/documentation/brand-assets/logoss"
