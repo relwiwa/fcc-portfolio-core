@@ -2,7 +2,6 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import React, { Component, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import relwiwaLogoFcc from '../images/relwiwa-logo-fcc.svg';
 import '../styles/portfolio-header.scss';
 
 class PortfolioHeader extends Component {
