@@ -1,8 +1,6 @@
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-import IconLink from '../../reusable-components/icon-link';
-
 const PortfolioDomainProjectDetails = (props) => {
   const { links, title, userStories } = props;
 
@@ -13,7 +11,7 @@ const PortfolioDomainProjectDetails = (props) => {
   return (
     <div className="portfolio-domain-project-details grid-x grid-padding-x">
       <h3 className="cell">User Stories <small>{title}</small></h3>
-      <p className="cell">The {title} project was implemented based on these <IconLink link={links.freecodecamp} icon="users" text="user stories" /> stated by FreeCodeCamp:</p>
+      <p className="cell">The {title} project was implemented based on these user stories stated by FreeCodeCamp:</p>
       <div className="cell medium-6">
         <ul className="fa-ul">
           {userStories.map((userStory, index) => {
