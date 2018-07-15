@@ -3,20 +3,6 @@ import React, { Fragment } from 'react';
 
 import IconLink from '../../reusable-components/icon-link';
 
-import logoFreeCodeCamp from '../images/about/logo-free-code-camp.png';
-
-import barChartScreenshot from '../images/screenshots/bar-chart.gif';
-import forceGraphScreenshot from '../images/screenshots/force-graph.gif';
-import heatMapScreenshot from '../images/screenshots/heat-map.gif';
-import leaderboardScreenshot from '../images/screenshots/leaderboard.gif';
-import lifeScreenshot from '../images/screenshots/life.gif';
-import markdownPreviewerScreenshot from '../images/screenshots/markdown-previewer.gif';
-import meteoriteMapScreenshot from '../images/screenshots/meteorite-map.gif';
-import recipeBoxScreenshot from '../images/screenshots/recipe-box.gif';
-import simonGameScreenshot from '../images/screenshots/simon-game.gif';
-import ticTacToeScreenshot from '../images/screenshots/tic-tac-toe.gif';
-import wikipediaViewerScreenshot from '../images/screenshots/wikipedia-viewer.gif';
-
 const renderFaIconWithText = (icon, text) => <nobr><FontAwesomeIcon icon={icon} /> {text}</nobr>;
 
 const portfolioData = {
@@ -46,7 +32,7 @@ const portfolioData = {
           <Fragment>It was initiated by <IconLink link="https://www.pedropcruz.pt" icon="user" text="Pedro" /> and <IconLink link="https://www.facebook.com/forra.luis" icon="user" text="Luis" /> and I've become one of the admins</Fragment>,
         ],
         "image": {
-          "url": logoFreeCodeCamp,
+          "url": 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531670588/portfolio-page/logo-free-code-camp.png',
         }
       },       
 
@@ -239,7 +225,7 @@ const portfolioData = {
           "title": "Simon Game",
           "route": "simon-game",
           "information": "This Simon Game is not just responsive, also its sounds work on mobile, thanks to audio sprites. Why don't you give it a try and try to remember the full sequence?",
-          "screenshot": simonGameScreenshot,
+          "screenshot": 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/simon-game.gif',
           "userStories": [
             {
               "description": "I am presented with a random series of button presses",
@@ -285,7 +271,7 @@ const portfolioData = {
         }, {
           "title": "Life",
           "route": "life",
-          "screenshot": lifeScreenshot,
+          "screenshot": 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/life.gif',
           "information": "Setup a population and watch how it evolve from generation to generation following the rules set out by Conway and his Game of Life",
           "userStories": [
             {
@@ -318,7 +304,7 @@ const portfolioData = {
           "title": "Recipe Box",
           "route": "recipe-box",
           "information": "Recipe Box lets you manage your recipes, filter them, and store them in your local storage",
-          "screenshot": recipeBoxScreenshot,
+          "screenshot": 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/recipe-box.gif',
           "userStories": [
             {
               "description": "I can create recipes that have names and ingredients",
@@ -352,7 +338,7 @@ const portfolioData = {
 //          "statement": "Data, turn equalize by row on",
           "information": "Get previews of Wikipedia entries with this Wikipedia Viewer, that is using Wikipedia's API",
 //          "description": "I wanted to achieve the effect of equal height columns without having to use Foundation's flex grid to maintain IE9 compatibility. For this, I used Foundation's Equalizer plugin. This meant learning how to integrate it both into React's component lifecycle and Webpack via Script Loader.",
-          "screenshot": wikipediaViewerScreenshot,
+          "screenshot": 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/wikipedia-viewer.gif',
           "userStories": [
             {
               "description": "I can search Wikipedia entries in a search box and see the resulting Wikipedia entries",
@@ -407,7 +393,7 @@ const portfolioData = {
         }, {
           "title": "Tic Tac Toe",
           "route": "tic-tac-toe",
-          "screenshot": ticTacToeScreenshot,
+          "screenshot": 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/tic-tac-toe.gif',
 //          "mockup": "",
 //          "statement": "Set Vertical Padding To Horizontal Width And You Got Reponsive Squares",
           "information": "The classic Tic Tac Toe game, implemented responsively with all of the UI within the nine fields of the board",
@@ -475,7 +461,7 @@ const portfolioData = {
         }, {
           "title": "Markdown Previewer",
           "route": "markdown-previewer",
-          "screenshot": markdownPreviewerScreenshot,
+          "screenshot": 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/markdown-previewer.gif',
 //          "mockup": "",
 //          "statement": "Yes, dangerouslySetInnerHtml",
           "information": "Enter Github-flavored Markdown and immediately see a live preview of the output",
@@ -552,11 +538,11 @@ const portfolioData = {
    */      }, {
           "title": "Leaderboard",
           "route": "leaderboard",
-          "screenshot": leaderboardScreenshot,
+          "screenshot": 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/leaderboard.gif',
 //          "mockup": "",
 //          "statement": "Let's Add A Pagination Feature To This Leaderboard",
-//          "information": "A Leaderboard featuring the top 100 FreeCodeCampers. It features pagination and sorting.",
-          "description": "A Leaderboard showing the top 100 FreeCodeCampers. It features pagination and sorting.",
+          "information": "A Leaderboard featuring the top 100 FreeCodeCampers. It features pagination and sorting.",
+//          "description": "A Leaderboard showing the top 100 FreeCodeCampers. It features pagination and sorting.",
           "userStories": [
             {
               "description": "I can see a table of the freeCodeCamp campers who've earned the most brownie points in the past 30 days",
@@ -741,7 +727,7 @@ const portfolioData = {
  {
           "title": "Meteorite Map",
           "route": "meteorite-map",
-          "screenshot": meteoriteMapScreenshot,
+          "screenshot": 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/meteorite-map.gif',
 //          "statement": "Now how do I get Antarctica off this map",
           "information": "An interactive map displaying meteorite strikes across the world between 1400 up until now",
 //          "description": "The challenging part in this project was to find the right allocation of tasks between D3 and React. So D3 was used to calculate the map and meteorite strikes. React got to render this data. To prevent massive re-renders, I explored React's PureComponent and shouldComponentUpdate. During the initial author-driven narrative, I came to use an interval- and CSS-based approach to display the meteorite strikes. And I got Antarctica off the map.",
@@ -830,7 +816,7 @@ const portfolioData = {
         }, {
           "title": "Bar Chart",
           "route": "bar-chart",
-          "screenshot": barChartScreenshot,
+          "screenshot": 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669959/portfolio-green/bar-chart.gif',
   //        "statement": "No, this component still shouldNotUpdate",
           "information": "Quarterly US GDP Data represented in a Bar Chart",
 //          "description": "It was the first time I ever used D3, right after Udacity's Data Visualization course. The first implementation focused on getting to know D3 and how to animate data on entry. The second focused on creating a responsive bar chart and optimizing the interplay between React and D3.",
@@ -910,7 +896,7 @@ const portfolioData = {
         },*/ {
           "title": "Heat Map",
           "route": "heat-map",
-          "screenshot": heatMapScreenshot,          
+          "screenshot": 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669959/portfolio-green/heat-map.gif',          
 //          "statement": "Hexagons, you look pretty, but aren't good for a cell by cell comparison",
           "information": "Global monthly temperatures put into a Heat Map",
 //          "description": "I implemented the Heat Map based on the React/D3/CSS configuration I came up with from the previous projects. Initially, I used hexagons to represent the data - they looked pretty, but made a cell by cell comparison difficult, so I switched back to regular cells. My implementation does not fit one page, so you cannot directly see the overall tendency at one glance. On the other hand, on the way there, each cell is big enough to make its data accessible.",
@@ -987,7 +973,7 @@ const portfolioData = {
         }, {
           "title": "Force Directed Graph",
           "route": "force-graph",
-          "screenshot": forceGraphScreenshot,
+          "screenshot": 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/force-graph.gif',
   //        "statement": "All of a sudden, there was a horizontal scrollbar",
           "information": "Border relationships between countries represented as a Force Directed Graph",
 //          "description": "There were two things I battled with in this project: First, setting the force graph's properties to be responsive. Second, dealing with a horizontal scrollbar, that appeared only after the SVG got its (height) dimensions set and rendered. I also learned about actions on mobile that unexpectedly trigger a resize event (for example show/hide address bar).",

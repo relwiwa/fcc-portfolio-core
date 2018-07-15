@@ -6,7 +6,6 @@ import '../styles/portfolio-fullscreen.scss';
 
 import IconButton from '../../reusable-components/icon-button';
 import PortfolioDomainProjectDetails from './portfolio-domain-project-details';
-import PortfolioSubnav from './portfolio-subnav';
 
 class PortfolioDomainProject extends Component {
   constructor(props) {
