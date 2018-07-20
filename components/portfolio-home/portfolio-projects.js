@@ -31,7 +31,7 @@ const PortfolioProjects = ({ projectsData }) => {
     return projects.map((project, index) => {
       const { screenshot, route: projectRoute, title } = project;
       const orbitSpec = {};
-      orbitSpec.imgSrc = screenshot;
+      orbitSpec.imgSrc = screenshot.blue;
       orbitSpec.figCaption = title;
       orbitSpec.link = `/${domainRoute}/${projectRoute}`;
       return orbitSpec;

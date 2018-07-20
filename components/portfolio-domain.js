@@ -31,7 +31,7 @@ class PortfolioDomain extends Component {
                 >
                   <CardImageWithFigCaption
                     figCaption={project.title}
-                    imageUrl={project.screenshot}
+                    imageUrl={project.screenshot.blue}
                   />
                 </Link>
               </PortfolioCard>;
