@@ -277,7 +277,7 @@ const portfolioData = {
           "route": "life",
           "screenshot": {
 //            green: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/life.gif',
-            blue: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1503172886/portfolio-page/game-of-life.png',
+            blue: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1533750544/portfolio-blue/life.png',
           },
           "information": "Setup a population and watch how it evolve from generation to generation following the rules set out by Conway and his Game of Life",
           "userStories": [
@@ -313,7 +313,7 @@ const portfolioData = {
           "information": "Recipe Box lets you manage your recipes, filter them, and store them in your local storage",
           "screenshot": {
             //green: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/recipe-box.gif',
-            blue: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1523359271/portfolio-page/recipe-box.png',
+            blue: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1533751081/portfolio-blue/recipe-box.png',
           },
           "userStories": [
             {
@@ -350,7 +350,7 @@ const portfolioData = {
 //          "description": "I wanted to achieve the effect of equal height columns without having to use Foundation's flex grid to maintain IE9 compatibility. For this, I used Foundation's Equalizer plugin. This meant learning how to integrate it both into React's component lifecycle and Webpack via Script Loader.",
           "screenshot": {
 //            green: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/wikipedia-viewer.gif',
-            blue: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1495561710/portfolio-page/wikipedia-viewer.png',
+            blue: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1533750543/portfolio-blue/wikipedia-viewer.gif',
           },
           "userStories": [
             {
@@ -479,7 +479,7 @@ const portfolioData = {
           "route": "markdown-previewer",
           "screenshot": {
 //            green: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/markdown-previewer.gif',
-            blue: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1495561374/portfolio-page/markdown-previewer.png',
+            blue: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1533750543/portfolio-blue/markdown-previewer.gif',
           },
 //          "mockup": "",
 //          "statement": "Yes, dangerouslySetInnerHtml",
