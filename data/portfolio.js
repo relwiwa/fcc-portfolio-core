@@ -29,8 +29,8 @@ const portfolioData = {
   //            "You build projects in order to achieve one of the certificates in the areas Frontend, Data Visualization and Backend",
           <Fragment>The technology stack clearly focuses on {renderFaIconWithText(['fab', 'js-square'], 'Javascript')}, and the usage of {renderFaIconWithText(['fab', 'react'], 'React')}, {renderFaIconWithText('chart-area', 'D3')}, and {renderFaIconWithText(['fab', 'node-js'], 'Node')}</Fragment>,
   //          "Based on the certificates, you will gain even more experience in non-profit, open source projects",
-          <Fragment>In our weekly <IconLink link="https://www.facebook.com/groups/free.code.camp.lisbon" icon={['fab', 'free-code-camp']} text="freeCodeCamp Lisbon" /> meeting, we support each other, do workshops and non-profit projects</Fragment>,
-          <Fragment>It was initiated by <IconLink link="https://www.pedropcruz.pt" icon="user" text="Pedro" /> and <IconLink link="https://www.facebook.com/forra.luis" icon="user" text="Luis" /> and I've become one of the admins</Fragment>,
+          <Fragment>There are regular meetings worldwide and while in Lisbon, I was one of the admins of <IconLink link="https://freecodecamplisbon.org" icon={['fab', 'free-code-camp']} text="freeCodeCamp Lisbon" /></Fragment>,
+          <Fragment>There, I did my first <IconLink link="https://github.com/freeCodeCampLisbon/eventos/blob/master/basic-react/2018-07-04_thinking-in-react-presentation.pdf" icon="chalkboard-teacher" text="React workshop"/>, and continued to do so in collaboration with <a href="https://eddisrupt.pt" title="Eddisrupt">Eddisrupt</a> at Instituto Superior Técnico</Fragment>,
         ],
         "image": {
           "url": 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531670588/portfolio-page/logo-free-code-camp.png',
