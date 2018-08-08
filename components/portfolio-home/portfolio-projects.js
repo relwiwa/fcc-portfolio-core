@@ -11,19 +11,16 @@ const PortfolioProjects = ({ projectsData }) => {
     const { description, icon, lessonsLearned, projects, route: domainRoute, title, website } = specs;
     const orbitSpecs = setupOrbitSpecs(domainRoute, projects);
 
-    return <div style={{position: 'relative', boxShadow: '0 0 20px gray', padding: 0, marginBottom: 15}} className="cell medium-6" key={title}>
+    return <div style={{position: 'relative', boxShadow: '0 0 20px gray', padding: 0, paddingBottom: 60, marginBottom: 15}} className="cell medium-6" key={title}>
+      <ImageOrbit orbitSpecs={orbitSpecs} />
       <Link
         to={'/' + domainRoute}
-        style={{position:'absolute', top: 0, left: 0, right: 0, marginBottom: 0}}
+        style={{position: 'absolute', bottom: 0, left: 0, right: 0, marginBottom: 0}}
         className="button large primary expanded"
         title={'Go to ' + title + ' Projects'}
       >
         <FontAwesomeIcon icon={icon} /> {title} Projects
       </Link>
-      <div style={{paddingTop: 40}}>
-        {description.split('.').map((item) => <p className="text-center" key={item.substr(0, 8)}>{item}</p>)}
-      </div>
-      <ImageOrbit orbitSpecs={orbitSpecs} />
     </div>;
   };
 
