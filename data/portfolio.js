@@ -279,7 +279,7 @@ const portfolioData = {
 //            green: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/life.gif',
             blue: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1533750544/portfolio-blue/life.png',
           },
-          "information": "Setup a population and watch how it evolve from generation to generation following the rules set out by Conway and his Game of Life",
+          "information": "Setup a population and watch how it evolves from generation to generation following the rules set out by Conway and his Game of Life",
           "userStories": [
             {
               "description": "When I first arrive at the game, it will randomly generate a board and start playing",
