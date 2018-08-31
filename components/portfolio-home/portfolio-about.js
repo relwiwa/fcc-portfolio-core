@@ -1,4 +1,4 @@
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 import CardImageWithFigCaption from '../../../reusable-components/card-image-with-fig-caption';
@@ -23,16 +23,15 @@ const PortfolioAbout = ({ aboutData }) => {
     );     
   };
 
-  return <div className="portfolio-about grid-container grid-container-padded" id="portfolio-about">
-    <PortfolioSection
-      subTitle={<FontAwesomeIcon icon={['fab', 'free-code-camp']} />}
-      title="freeCodeCamper Walter"
-    >
-      <div className="grid-x grid-margin-x grid-margin-y medium-up-2 align-stretch">
-        {aboutData['sections'].map((section) => renderAboutSection(section))}
-      </div>
-    </PortfolioSection>
-  </div>;
+  return <PortfolioSection
+    className="portfolio-about"
+    subTitle={<FontAwesomeIcon icon={['fab', 'free-code-camp']} />}
+    title="freeCodeCamper Walter"
+  >
+    <div className="grid-x grid-margin-x grid-margin-y medium-up-2 align-stretch">
+      {aboutData['sections'].map((section) => renderAboutSection(section))}
+    </div>
+  </PortfolioSection>;
 };
 
 export default PortfolioAbout;

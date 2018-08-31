@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import '../styles/portfolio-domain-project.scss';
 import '../styles/portfolio-fullscreen.scss';

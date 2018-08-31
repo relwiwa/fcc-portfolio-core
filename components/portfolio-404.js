@@ -1,16 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import IconLink from '../../reusable-components/icon-link';
+import PortfolioSection from '../../reusable-components/portfolio-section';
 
 const Portfolio404 = (props) => (
-  <div className="portfolio-404 grid-container grid-container-padded" id="portfolio-404">
-    <div className="grid-x grid-padding-x">
-      <div className="cell callout">
-        <h1>Not Found <small>404</small></h1>
-        <p>No such page on this website</p>
-        <p>Go to <Link to="/">Home Page</Link></p>
-      </div>
-    </div>
-  </div>
+  <PortfolioSection
+    className="portfolio-404"
+    subTitle="404"
+    title="Not Found"
+  >
+    <p>No such page on this website</p>
+    <p>Go to <IconLink
+      icon="home"
+      link="/"
+      text="Home Page"
+    /></p>
+  </PortfolioSection>
 );
 
 export default Portfolio404;

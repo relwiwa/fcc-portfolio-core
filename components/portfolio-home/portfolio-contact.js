@@ -29,19 +29,18 @@ const PortfolioContact = (props) => {
     </PortfolioCard>
   );
 
-  return <div className="portfolio-contact grid-container grid-container-padded" id="portfolio-contact">
-    <PortfolioSection
-      title="Contact"
-      subTitle="relwiwa"
-    >
-      <p>Trace the footprints I've left on the following sites while catching up with the latest technologies:</p>
-      <div className="grid-x grid-margin-x grid-margin-y medium-up-3 align-stretch">
-        {renderContactItem(contactData['coding'])}
-        {renderContactItem(contactData['code'])}
-        {renderContactItem(contactData['training'])}
-      </div>
-    </PortfolioSection>
-  </div>;
+  return <PortfolioSection
+    className="portfolio-contact"
+    title="Contact"
+    subTitle="relwiwa"
+  >
+    <p>Trace the footprints I've left on the following sites while catching up with the latest technologies:</p>
+    <div className="grid-x grid-margin-x grid-margin-y medium-up-3 align-stretch">
+      {renderContactItem(contactData['coding'])}
+      {renderContactItem(contactData['code'])}
+      {renderContactItem(contactData['training'])}
+    </div>
+  </PortfolioSection>;
 }
 
 export default PortfolioContact;

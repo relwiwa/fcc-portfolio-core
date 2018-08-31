@@ -1,4 +1,4 @@
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -35,20 +35,19 @@ const PortfolioProjects = ({ projectsData }) => {
     });
   };
 
-  return <div className="portfolio-projects grid-container grid-container-padded" id="portfolio-projects">
-    <PortfolioSection
-      subTitle="freeCodeCamp"
-      title="Projects"
-    >
-      <div className="grid-x grid-margin-x align-stretch">
-        <div className="cell">
-          <p>Can you remember the full sequence of a <IconLink link="frontend-projects/simon-game" icon="music" text="Simon Game" />? Or beat the AI in <IconLink link="frontend-projects/tic-tac-toe" icon="cubes" text="Tic Tac Toe" />?</p>
-          <p>Not in the mood to play? Then checkout the fascinating patterns in Conway's <IconLink link="frontend-projects/life" icon="server" text="Life Automaton" />, all documented <IconLink link="d3-projects/meteorite-map" icon="globe" text="Meteorite Strikes" />, and many more projects!</p>
-        </div>
-        {projectsData.map((category) => renderCategory(category))}
+  return <PortfolioSection
+    className="portfolio-projects"
+    subTitle="freeCodeCamp"
+    title="Projects"
+  >
+    <div className="grid-x grid-margin-x align-stretch">
+      <div className="cell">
+        <p>Can you remember the full sequence of a <IconLink link="frontend-projects/simon-game" icon="music" text="Simon Game" />? Or beat the AI in <IconLink link="frontend-projects/tic-tac-toe" icon="cubes" text="Tic Tac Toe" />?</p>
+        <p>Not in the mood to play? Then checkout the fascinating patterns in Conway's <IconLink link="frontend-projects/life" icon="server" text="Life Automaton" />, all documented <IconLink link="d3-projects/meteorite-map" icon="globe" text="Meteorite Strikes" />, and many more projects!</p>
       </div>
-    </PortfolioSection>
-  </div>;
+      {projectsData.map((category) => renderCategory(category))}
+    </div>
+  </PortfolioSection>;
 };
 
 export default PortfolioProjects;

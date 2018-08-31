@@ -11,35 +11,34 @@ class PortfolioDomain extends Component {
     const { domainData } = this.props;
     const { projects, route, title } = domainData;
 
-    return <div className="portfolio-projects grid-container grid-container-padded" id="portfolio-projects">
-      <PortfolioSection
-        subTitle={title}
-        title="Projects"
-      >
-        <div className="grid-x align-stretch medium-up-2 large-up-3 grid-margin-x grid-margin-y">
-          {projects.map((project) => {
-            if (!project.externalOnly) {
-              const link = '/' + route + '/' + project.route;
-              return <PortfolioCard
-                key={project.title}
-                cardText={[project.information]}
-                link={link}
+    return <PortfolioSection
+      className="portfolio-projects"
+      subTitle={title}
+      title="Projects"
+    >
+      <div className="grid-x align-stretch medium-up-2 large-up-3 grid-margin-x grid-margin-y">
+        {projects.map((project) => {
+          if (!project.externalOnly) {
+            const link = '/' + route + '/' + project.route;
+            return <PortfolioCard
+              key={project.title}
+              cardText={[project.information]}
+              link={link}
+            >
+              <Link
+                title={'Check out the ' + project.title + ' Project'}
+                to={link}
               >
-                <Link
-                  title={'Check out the ' + project.title + ' Project'}
-                  to={link}
-                >
-                  <CardImageWithFigCaption
-                    figCaption={project.title}
-                    imageUrl={project.screenshot.blue}
-                  />
-                </Link>
-              </PortfolioCard>;
-            }
-          })}
-        </div>
-      </PortfolioSection>
-    </div>;
+                <CardImageWithFigCaption
+                  figCaption={project.title}
+                  imageUrl={project.screenshot.blue}
+                />
+              </Link>
+            </PortfolioCard>;
+          }
+        })}
+      </div>
+    </PortfolioSection>;
   }
 }
 
