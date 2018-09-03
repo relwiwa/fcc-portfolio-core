@@ -129,8 +129,26 @@ const portfolioData = {
           "url": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1495707922/technology-icons/javascript.svg",
           "source": "https://worldvectorlogo.com/de/logo/javascript"
         }
-      }
-    ]
+      }, {
+        "title": "Git",
+        "image": {
+          "url": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1535997561/technology-icons/git-icon.svg",
+          "source": "https://worldvectorlogo.com/downloaded/git-icon",
+        },
+      }, {
+        "title": "AWS",
+        "image": {
+          "url": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1535997561/technology-icons/aws-logo.svg",
+          "source": "https://worldvectorlogo.com/downloaded/aws-logo",
+        },
+      }, {
+        "title": "Heroku",
+        "image": {
+          "url": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1535997561/technology-icons/heroku.svg",
+          "source": "https://worldvectorlogo.com/logo/heroku",
+        },
+      },
+    ],
   },
   "contact": {
     "training": {
