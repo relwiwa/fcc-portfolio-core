@@ -1,19 +1,20 @@
+import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import '../styles/portfolio-main.scss';
 
 import Portfolio404 from './portfolio-404';
 import PortfolioAbout from './portfolio-home/portfolio-about';
 import PortfolioContact from './portfolio-home/portfolio-contact';
+import PortfolioDashboard from './portfolio-dashboard';
 import PortfolioDomain from './portfolio-domain';
 import PortfolioDomainProject from './portfolio-domain-project';
 import PortfolioHome from './portfolio-home/portfolio-home';
 import PortfolioSubnav from './portfolio-subnav';
+import SignIn from './authentication/sign-in';
 
-const PortfolioMain = (props) => {
-  const { portfolioData } = props;
-
+const PortfolioMain = ({ authenticatedUserEmail, isAuthenticated, onSuccessfulSignIn, portfolioData }) => {
   return (
     <div className="portfolio-main">
       <Switch>
@@ -83,14 +84,67 @@ const PortfolioMain = (props) => {
         />
         <Route
           exact
+          path='/sign-in'
+          render={() => {
+            if (isAuthenticated === true) {
+              return <Redirect to="/dashboard" />;
+            }
+            else if (isAuthenticated === false) {
+              return <Fragment>
+                <PortfolioSubnav />
+                <SignIn
+                  onSuccessfulSignIn={onSuccessfulSignIn}
+                />
+              </Fragment>;
+            }
+            else {
+              return <Fragment>neither true nor false</Fragment>
+            }
+          }}
+        />
+        <Route
+          exact
+          path='/dashboard'
+          render={() => {
+            if (isAuthenticated === true) {
+              return <Fragment>
+                  <PortfolioSubnav />
+                  <PortfolioDashboard
+                    authenticatedUserEmail={authenticatedUserEmail}
+                  />
+                </Fragment>;
+            }
+            else if (isAuthenticated === false) {
+              return <Fragment>
+                <PortfolioSubnav />
+                <SignIn
+                  onSuccessfulSignIn={onSuccessfulSignIn}
+                />
+              </Fragment>;
+            }
+            else {
+              return null;
+            }
+          }}
+        />
+        <Route
+          exact
           render={() => <Fragment>
             <PortfolioSubnav />
             <Portfolio404 />
           </Fragment>}
         />
+
       </Switch>
     </div>
   );
 }
+
+PortfolioMain.propTypes = {
+  authenticatedUserEmail: PropTypes.string,
+  isAuthenticated: PropTypes.bool,
+  onSuccessfulSignIn: PropTypes.func.isRequired,
+  portfolioData: PropTypes.object.isRequired,
+};
 
 export default PortfolioMain;
