@@ -13,6 +13,7 @@ import PortfolioDomainProject from './portfolio-domain-project';
 import PortfolioHome from './portfolio-home/portfolio-home';
 import PortfolioSubnav from './portfolio-subnav';
 import SignIn from './authentication/sign-in';
+import SignUp from './authentication/sign-up';
 
 const PortfolioMain = ({ authenticatedUserEmail, isAuthenticated, onSuccessfulSignIn, portfolioData }) => {
   return (
@@ -95,6 +96,24 @@ const PortfolioMain = ({ authenticatedUserEmail, isAuthenticated, onSuccessfulSi
                 <SignIn
                   onSuccessfulSignIn={onSuccessfulSignIn}
                 />
+              </Fragment>;
+            }
+            else {
+              return <Fragment>neither true nor false</Fragment>
+            }
+          }}
+        />
+        <Route
+          exact
+          path='/sign-up'
+          render={() => {
+            if (isAuthenticated === true) {
+              return <Redirect to="/dashboard" />;
+            }
+            else if (isAuthenticated === false) {
+              return <Fragment>
+                <PortfolioSubnav />
+                <SignUp />
               </Fragment>;
             }
             else {

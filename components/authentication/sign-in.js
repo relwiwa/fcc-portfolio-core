@@ -5,16 +5,14 @@ import PropTypes from 'prop-types';
 
 import AuthenticationForm from './authentication-form';
 
-const INPUT_DATA = 'INPUT_DATA';
-const SEND_DATA = 'SEND_DATA';
-const ERROR = 'ERROR';
-const WRONG_CREDENTIALS = 'WRONG_CREDENTIALS';
+import { authenticationFormPhase } from '../../../config/application-vocab';
+const  { ERROR, INPUT_DATA, SEND_DATA, WRONG_CREDENTIALS } = authenticationFormPhase;
 
 const statusMessages = {};
 statusMessages[INPUT_DATA] = 'Sign in below to dive even deeper into the full-stack applications I did!';
-statusMessages[SEND_DATA] = <Fragment><FontAwesomeIcon icon="spinner" spin /> Sending your signin data to the server.</Fragment>;
+statusMessages[SEND_DATA] = <Fragment><FontAwesomeIcon icon="spinner" spin /> Sending your sign in data to the server.</Fragment>;
 statusMessages[ERROR] = 'An error happened. Sign in was not successful.';
-statusMessages[WRONG_CREDENTIALS] = 'Your email and/or password war not correct. Sign in was not successful.';
+statusMessages[WRONG_CREDENTIALS] = 'Your email and/or password were not correct. Sign in was not successful.';
 
 class SignIn extends Component {
   constructor(props) {
@@ -29,14 +27,14 @@ class SignIn extends Component {
 
   handleSubmitSignInData() {
     const { onSuccessfulSignIn } = this.props;
-    const { email } = this.state;
+    const { email, password } = this.state;
 
     this.setState({
       phase: SEND_DATA,
     });
-    axios.post('http://localhost:3000/user/signin', {
-      email: this.state.email,
-      password: this.state.password,
+    axios.post('http://localhost:3000/user/sign-in', {
+      email,
+      password,
     })
     .then(response => {
       onSuccessfulSignIn(response.data.userJwt, email);
@@ -61,7 +59,7 @@ class SignIn extends Component {
     const { email, password, phase } = this.state;
 
     return <AuthenticationForm
-      className="signin"
+      className="sign-in"
       email={email}
       faIcon="sign-in-alt"
       headline="Sign In"
