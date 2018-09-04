@@ -15,7 +15,7 @@ import PortfolioSubnav from './portfolio-subnav';
 import SignIn from './authentication/sign-in';
 import SignUp from './authentication/sign-up';
 
-const PortfolioMain = ({ authenticatedUserEmail, isAuthenticated, onSuccessfulSignIn, portfolioData }) => {
+const PortfolioMain = ({ authenticatedUserEmail, isAuthenticated, onSignOut, onSuccessfulSignIn, portfolioData }) => {
   return (
     <div className="portfolio-main">
       <Switch>
@@ -87,19 +87,19 @@ const PortfolioMain = ({ authenticatedUserEmail, isAuthenticated, onSuccessfulSi
           exact
           path='/sign-in'
           render={() => {
-            if (isAuthenticated === true) {
-              return <Redirect to="/dashboard" />;
-            }
-            else if (isAuthenticated === false) {
+            if (isAuthenticated !== null) {
               return <Fragment>
                 <PortfolioSubnav />
                 <SignIn
+                  authenticatedUserEmail={authenticatedUserEmail}
+                  isAuthenticated={isAuthenticated}
+                  onSignOut={onSignOut}
                   onSuccessfulSignIn={onSuccessfulSignIn}
                 />
               </Fragment>;
             }
             else {
-              return <Fragment>neither true nor false</Fragment>
+              return null
             }
           }}
         />
@@ -107,17 +107,18 @@ const PortfolioMain = ({ authenticatedUserEmail, isAuthenticated, onSuccessfulSi
           exact
           path='/sign-up'
           render={() => {
-            if (isAuthenticated === true) {
-              return <Redirect to="/dashboard" />;
-            }
-            else if (isAuthenticated === false) {
+            if (isAuthenticated !== null) {
               return <Fragment>
                 <PortfolioSubnav />
-                <SignUp />
+                <SignUp
+                  authenticatedUserEmail={authenticatedUserEmail}
+                  isAuthenticated={isAuthenticated}
+                  onSignOut={onSignOut}
+                />
               </Fragment>;
             }
             else {
-              return <Fragment>neither true nor false</Fragment>
+              return null
             }
           }}
         />
@@ -137,6 +138,9 @@ const PortfolioMain = ({ authenticatedUserEmail, isAuthenticated, onSuccessfulSi
               return <Fragment>
                 <PortfolioSubnav />
                 <SignIn
+                  authenticatedUserEmail={authenticatedUserEmail}
+                  isAuthenticated={isAuthenticated}
+                  onSignOut={onSignOut}
                   onSuccessfulSignIn={onSuccessfulSignIn}
                 />
               </Fragment>;
@@ -162,6 +166,7 @@ const PortfolioMain = ({ authenticatedUserEmail, isAuthenticated, onSuccessfulSi
 PortfolioMain.propTypes = {
   authenticatedUserEmail: PropTypes.string,
   isAuthenticated: PropTypes.bool,
+  onSignOut: PropTypes.func.isRequired,
   onSuccessfulSignIn: PropTypes.func.isRequired,
   portfolioData: PropTypes.object.isRequired,
 };

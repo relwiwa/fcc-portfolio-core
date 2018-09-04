@@ -6,7 +6,7 @@ import PortfolioHeader from './portfolio-header';
 import PortfolioMain from './portfolio-main';
 
 import portfolioData from '../data/portfolio';
-import { getAuthenticationData, saveAuthDataToLocalStorage } from '../../services/authentication';
+import { getAuthenticationData, removeAuthDataFromLocalStorage, saveAuthDataToLocalStorage } from '../../services/authentication';
 import '../styles/portfolio.scss';
 
 class Portfolio extends Component {
@@ -15,7 +15,15 @@ class Portfolio extends Component {
     this.state = {
       authenticationData: getAuthenticationData(),
     };
+    this.handleSignOut = this.handleSignOut.bind(this);
     this.handleSuccessfulSignIn = this.handleSuccessfulSignIn.bind(this);
+  }
+  
+  handleSignOut() {
+    removeAuthDataFromLocalStorage();
+    this.setState({
+      authenticationData: getAuthenticationData(),
+    });
   }
 
   handleSuccessfulSignIn(jwtToken, userEmail) {
@@ -37,6 +45,7 @@ class Portfolio extends Component {
       <PortfolioMain
         authenticatedUserEmail={authenticatedUserEmail}
         isAuthenticated={isAuthenticated}
+        onSignOut={this.handleSignOut}
         onSuccessfulSignIn={this.handleSuccessfulSignIn}
         portfolioData={portfolioData}
       />

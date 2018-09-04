@@ -51,13 +51,17 @@ class SignUp extends Component {
 
   render() {
     const { email, password, phase } = this.state;
+    const { authenticatedUserEmail, isAuthenticated, onSignOut } = this.props;
 
     return <AuthenticationForm
+      authenticatedUserEmail={authenticatedUserEmail}
       className="sign-up"
       email={email}
       faIcon="user-plus"
       headline="Sign Up"
+      isAuthenticated={isAuthenticated}
       onChangeInputDatum={(datum) => this.setState(datum)}
+      onSignOut={onSignOut}
       onSubmitSignInData={this.handleSubmitSignUpData}
       password={password}
       statusMessage={statusMessages[phase]}
@@ -66,6 +70,9 @@ class SignUp extends Component {
 }
 
 SignUp.propTypes = {
+  authenticatedUserEmail: PropTypes.string,
+  isAuthenticated: PropTypes.bool.isRequired,
+  onSignOut: PropTypes.func.isRequired,
 };
 
 export default SignUp;
