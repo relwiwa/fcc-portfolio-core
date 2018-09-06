@@ -58,6 +58,10 @@ class PortfolioDomainProject extends Component {
           import('../../projects/leaderboard/components/leaderboard')
             .then((component) => this.handleComponentLoaded(component));
             break;
+        case 'voting':
+          import('../../projects/voting/components/voting')
+            .then((component) => this.handleComponentLoaded(component));
+            break;
         default:
           break;
       }
