@@ -60,7 +60,7 @@ const PortfolioFooter = (props) => {
     <div className="portfolio-footer">
       <div className="callout">
         <div className="grid-container grid-container-padded">
-          <div className="grid-x grid-padding-x small-up-2 large-up-3">
+          <div className="grid-x grid-padding-x small-up-2 large-up-4">
             {projectsData.map((category) => renderProjectCategory(category))}
             {renderContactItems(contactData)}
           </div>

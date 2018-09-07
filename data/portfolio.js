@@ -240,56 +240,7 @@ const portfolioData = {
       ],
       "website": "",
  */      "projects": [
-  {
-    "title": "Voting",
-    "route": "voting",
-    "information": "",
-    "screenshot": {
-//            green: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/simon-game.gif',
-      blue: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1495561710/portfolio-page/voting.png',
-    },
-    "userStories": [
-      {
-        "description": "As an authenticated user, I can keep my polls and come back later to access them",
-        "icon": "save"
-      }, {
-        "description": "As an authenticated user, I can share my polls with my friends",
-        "icon": "share-alt"
-      }, {
-        "description": "As an authenticated user, I can see the aggregate results of my polls",
-        "icon": "chart-bar"
-      }, {
-        "description": "As an authenticated user, I can delete polls that I decide I don't want anymore",
-        "icon": "trash"
-      }, {
-        "description": "As an authenticated user, I can create a poll with any number of possible items",
-        "icon": "cart-plus"
-      }, {
-        "description": "As an unauthenticated or authenticated user, I can see and vote on everyone's polls",
-        "icon": "times-circle"
-      }, {
-        "description": "As an unauthenticated or authenticated user, I can see the results of polls in chart form",
-        "icon": "chart-pie"
-      }, {
-        "description": "As an authenticated user, if I don't like the options on a poll, I can create a new option",
-        "icon": "plus"
-      } 
-    ],
-/*           "sources": [
-      {
-        "url": "http://soundbible.com/1003-Ta-Da.html",
-        "licence": "Attribution 3.0 licence"
-      }, {
-        "url": "http://soundbible.com/1682-Robot-Blip.html",
-        "licence": "Attribution 3.0 licence"
-      }
-    ],
-*/          "links": {
-      "freecodecamp": "https://learn.freecodecamp.org/coding-interview-prep/take-home-projects/build-a-voting-app/",
-/*    "github": "https://github.com/relwiwa/fcc-simon-game",
-      "github.io": "https://relwiwa.github.io/fcc-simon-game" */
-    },
-  }, {
+         {
           "title": "Simon Game",
           "route": "simon-game",
           "information": "This Simon Game is not just responsive, also its sounds work on mobile, thanks to audio sprites. Why don't you give it a try and try to remember the full sequence?",
@@ -1126,25 +1077,58 @@ const portfolioData = {
           }          
         }
       ]
-    }/*, {
+    }, {
       "domain": "backend",
       "route": "backend-projects",
       "title": "Backend",
-      "description": "The backend projects are all set in the Node environment. On the one hand, they are about providing data via restful APIs. On the other hand, they focus on building various full-stack applications.",
-      "lessonsLearned": [
-        "Several Full-Stack Environments",
-        "JSON-Webtoken- and Passport-based User Authentication"
-      ],
+      "icon": "server",
+      // "description": "The backend projects are all set in the Node environment. On the one hand, they are about providing data via restful APIs. On the other hand, they focus on building various full-stack applications.",
       "website": "",
       "projects": [
         {
-          "title": "Voting App",
+          "title": "Voting",
           "route": "voting",
-          "screenshot": "https://res.cloudinary.com/dqzrtsqol/image/upload/v1495561374/portfolio-page/voting.png"
-        }
-      ]
-    }*/
-  ]
-}
+          "information": "Collaborative decision making is just around the corner with this voting app called Decisions, Decisions",
+          "screenshot": {
+      //            green: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/simon-game.gif',
+            blue: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1495561710/portfolio-page/voting.png',
+          },
+          "userStories": [
+            {
+              "description": "As an authenticated user, I can keep my polls and come back later to access them",
+              "icon": "save"
+            }, {
+              "description": "As an authenticated user, I can share my polls with my friends",
+              "icon": "share-alt"
+            }, {
+              "description": "As an authenticated user, I can see the aggregate results of my polls",
+              "icon": "chart-bar"
+            }, {
+              "description": "As an authenticated user, I can delete polls that I decide I don't want anymore",
+              "icon": "trash"
+            }, {
+              "description": "As an authenticated user, I can create a poll with any number of possible items",
+              "icon": "cart-plus"
+            }, {
+              "description": "As an unauthenticated or authenticated user, I can see and vote on everyone's polls",
+              "icon": "times-circle"
+            }, {
+              "description": "As an unauthenticated or authenticated user, I can see the results of polls in chart form",
+              "icon": "chart-pie"
+            }, {
+              "description": "As an authenticated user, if I don't like the options on a poll, I can create a new option",
+              "icon": "plus"
+            } 
+          ],
+          "links": {
+            "freecodecamp": "https://learn.freecodecamp.org/coding-interview-prep/take-home-projects/build-a-voting-app/",
+      /*    "github": "https://github.com/relwiwa/fcc-simon-game",
+            "github.io": "https://relwiwa.github.io/fcc-simon-game" */
+          },
+        },
+      ],
+    },
+  ],
+};
 
 export default portfolioData;
