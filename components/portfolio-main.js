@@ -45,7 +45,6 @@ const PortfolioMain = ({ authenticatedUserEmail, isAuthenticated, onSignOut, onS
           domain['projects'].map((project) => {
             if (!project.externalOnly) {
               routes.push(<Route
-                exact
                 key={project.route}
                 path={'/' + domain.route + '/' + project.route}
                 render={() => <Fragment>

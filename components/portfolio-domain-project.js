@@ -84,6 +84,16 @@ class PortfolioDomainProject extends Component {
             break;
       }
     }
+    else if (domain === 'backend') {
+      switch(route) {
+        case 'voting':
+          import('../../projects/voting/components/voting')
+            .then((component) => this.handleComponentLoaded(component));
+            break;
+        default:
+            break;
+      }
+    }
   }
 
   handleComponentLoaded(component) {
