@@ -6,12 +6,16 @@ import PortfolioHeader from './portfolio-header';
 import PortfolioMain from './portfolio-main';
 
 import portfolioData from '../data/portfolio';
-import { getAuthenticationData, removeAuthDataFromLocalStorage, saveAuthDataToLocalStorage } from '../../services/authentication';
+import { AuthenticationContext, getAuthenticationData, removeAuthDataFromLocalStorage, saveAuthDataToLocalStorage } from '../../services/authentication';
 import '../styles/portfolio.scss';
 
 class Portfolio extends Component {
   constructor(props) {
     super(props);
+    /*  values of isAuthenticated:
+        - null: not yet determined (or SSR)
+        - true
+        - false */
     this.state = {
       authenticationData: getAuthenticationData(),
     };
@@ -27,33 +31,39 @@ class Portfolio extends Component {
   }
 
   handleSuccessfulSignIn(jwtToken, userEmail) {
+    const { history, location: { state: routerState } } = this.props;
+    console.log(this.props, location, routerState);
     saveAuthDataToLocalStorage(jwtToken, userEmail);
     this.setState({
       authenticationData: getAuthenticationData(),
     });
-    this.props.history.push('/dashboard');
+    if (routerState.redirectTo) {
+      history.push(routerState.redirectTo);
+    }
+    else {
+      history.push('/dashboard');
+    }
   }
 
   render() {
-    const { authenticationData: { authenticatedUserEmail, isAuthenticated } } = this.state;
+    const { authenticationData } = this.state;
 
-    return <div className="portfolio">
-      <PortfolioHeader
-        isAuthenticated={isAuthenticated}
-        projectsData={portfolioData['domains']}
-      />
-      <PortfolioMain
-        authenticatedUserEmail={authenticatedUserEmail}
-        isAuthenticated={isAuthenticated}
-        onSignOut={this.handleSignOut}
-        onSuccessfulSignIn={this.handleSuccessfulSignIn}
-        portfolioData={portfolioData}
-      />
-      <PortfolioFooter
-        contactData={portfolioData['contact']}
-        projectsData={portfolioData['domains']}
-      />
-    </div>;
+    return <AuthenticationContext.Provider value={authenticationData}>
+      <div className="portfolio">
+        <PortfolioHeader
+          projectsData={portfolioData['domains']}
+        />
+        <PortfolioMain
+          onSignOut={this.handleSignOut}
+          onSuccessfulSignIn={this.handleSuccessfulSignIn}
+          portfolioData={portfolioData}
+        />
+        <PortfolioFooter
+          contactData={portfolioData['contact']}
+          projectsData={portfolioData['domains']}
+        />
+      </div>
+    </AuthenticationContext.Provider>;
   }
 }
 

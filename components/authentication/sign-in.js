@@ -36,23 +36,25 @@ class SignIn extends Component {
       email,
       password,
     })
-    .then(response => {
-      onSuccessfulSignIn(response.data.userJwt, email);
-    })
-    .catch(error => {
-      if (error.message === 'Request failed with status code 401') {
-        this.setState({
-          password: '',
-          phase: WRONG_CREDENTIALS,
-        });  
+    .then(
+      response => {
+        onSuccessfulSignIn(response.data.userJwt, email);
+      },
+      error => {
+        if (error.message === 'Request failed with status code 401') {
+          this.setState({
+            password: '',
+            phase: WRONG_CREDENTIALS,
+          });  
+        }
+        else {
+          this.setState({
+            password: '',
+            phase: ERROR,
+          });
+        }
       }
-      else {
-        this.setState({
-          password: '',
-          phase: ERROR,
-        });
-      }
-    });
+    );
   }
 
   render() {
