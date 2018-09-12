@@ -5,6 +5,7 @@ import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import AuthenticationForm from './authentication-form';
+import IconLink from '../../../reusable-components/icon-link';
 
 import { authenticationFormPhase } from '../../../config/application-vocab';
 const  { ERROR, INPUT_DATA, SEND_DATA, WRONG_CREDENTIALS } = authenticationFormPhase;
@@ -62,8 +63,21 @@ class SignIn extends Component {
     const { email, password, phase } = this.state;
     const { authenticatedUserEmail, isAuthenticated, location, onSignOut } = this.props;
     let statusMessage = statusMessages[phase];
-    if (phase === INPUT_DATA && location.state.signInMessage) {
-      statusMessage = location.state.signInMessage;
+    if (phase === INPUT_DATA && location.state && location.state.project) {
+      statusMessage = `Sign in below to dive even deeper into ${location.state.project} and all the other full-stack applications I did`;
+    }
+    if (phase === INPUT_DATA) {
+      statusMessage = <Fragment>{statusMessage}. If you do not have an account yet, it is time to <IconLink
+        link={location.state && location.state.project ? {
+          pathname: '/sign-up',
+          state: {
+            from: location.state.from,
+            project: location.state.project,
+          },
+        } : "/sign-up"}
+        text="sign up"
+        icon="user-plus"
+      /></Fragment>;
     }
 
     return <AuthenticationForm
