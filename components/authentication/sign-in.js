@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component, Fragment } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import AuthenticationForm from './authentication-form';
 
@@ -59,7 +60,11 @@ class SignIn extends Component {
 
   render() {
     const { email, password, phase } = this.state;
-    const { authenticatedUserEmail, isAuthenticated, onSignOut } = this.props;
+    const { authenticatedUserEmail, isAuthenticated, location, onSignOut } = this.props;
+    let statusMessage = statusMessages[phase];
+    if (phase === INPUT_DATA && location.state.signInMessage) {
+      statusMessage = location.state.signInMessage;
+    }
 
     return <AuthenticationForm
       authenticatedUserEmail={authenticatedUserEmail}
@@ -72,7 +77,7 @@ class SignIn extends Component {
       onSignOut={onSignOut}
       onSubmitSignInData={this.handleSubmitSignInData}
       password={password}
-      statusMessage={statusMessages[phase]}
+      statusMessage={statusMessage}
     />;
   }
 }
@@ -80,8 +85,13 @@ class SignIn extends Component {
 SignIn.propTypes = {
   authenticatedUserEmail: PropTypes.string,
   isAuthenticated: PropTypes.bool.isRequired,
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      signInMessage: PropTypes.string,
+    })
+  }),
   onSignOut: PropTypes.func.isRequired,
   onSuccessfulSignIn: PropTypes.func.isRequired,
 };
 
-export default SignIn;
+export default withRouter(SignIn);

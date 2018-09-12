@@ -32,13 +32,12 @@ class Portfolio extends Component {
 
   handleSuccessfulSignIn(jwtToken, userEmail) {
     const { history, location: { state: routerState } } = this.props;
-    console.log(this.props, location, routerState);
     saveAuthDataToLocalStorage(jwtToken, userEmail);
     this.setState({
       authenticationData: getAuthenticationData(),
     });
-    if (routerState.redirectTo) {
-      history.push(routerState.redirectTo);
+    if (routerState.from) {
+      history.push(routerState.from);
     }
     else {
       history.push('/dashboard');
