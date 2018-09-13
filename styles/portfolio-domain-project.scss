@@ -28,6 +28,12 @@
   }
 }
 
+.portfolio-domain-project {
+  @media screen and (max-width: 30em) {
+    padding: 0;
+  }
+}
+
 .portfolio-domain-project > .grid-x > .callout {
 	@media screen and (max-width: 63.938em ) {
     padding-left: 0;
