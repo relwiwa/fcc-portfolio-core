@@ -4,27 +4,24 @@ import { NavLink } from 'react-router-dom';
 import '../styles/portfolio-subnav.scss';
 
 const PortfolioSubnav = (props) => {
-  const { domainRoute, projects } = props;
+  const { domainRoute, projects, subnavEntries } = props;
 
   return (
     <div className="portfolio-subnav">
       <div className="callout">
         <ul className="menu align-center">
-          {projects ? projects.map((project) => {
-            if (!project.externalOnly) {
-              return (
-                <li key={project.title}>
-                  <NavLink
-                    activeClassName="subnav-active-element"
-                    exact
-                    to={'/' + domainRoute + '/' + project.route}
-                  >
-                    {project.title}
-                  </NavLink>
-                </li>
-              );
-            }
-          }) : <li><a>&nbsp;</a></li>}
+          {subnavEntries
+            ? subnavEntries.map(subnavEntry => <li key={subnavEntry.title}>
+              <NavLink
+                activeClassName="subnav-active-element"
+                exact
+                to={subnavEntry.to}
+              >
+                {subnavEntry.title}
+              </NavLink>
+            </li>)
+            : <li><a>&nbsp;</a></li>
+          }
         </ul>
       </div>
     </div>

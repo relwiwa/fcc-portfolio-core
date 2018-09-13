@@ -17,6 +17,20 @@ import SignIn from './authentication/sign-in';
 import SignUp from './authentication/sign-up';
 
 const PortfolioMain = ({ onSignOut, onSuccessfulSignIn, portfolioData }) => {
+  const getSubnavOfDomain = (domain) => {
+    const { projects, route: domainRoute } = domain;
+    const subnavEntries = [];
+    projects.map(project => {
+      if (!project.externalOnly) {
+        subnavEntries.push({
+          to: '/' + domainRoute + '/' + project.route,
+          title: project.title,
+        });
+      }
+    });
+    return subnavEntries;
+  };
+
   return (
     <div className="portfolio-main">
       <AuthenticationContext.Consumer>
@@ -30,14 +44,15 @@ const PortfolioMain = ({ onSignOut, onSuccessfulSignIn, portfolioData }) => {
           />
           {portfolioData['domains'].map((domain) => {
             let routes = [];
+            const subnavEntries = getSubnavOfDomain(domain);
+            console.log(subnavEntries);
             routes.push(<Route
               exact
               key={domain.route}
               path={'/' + domain.route}
               render={() => <Fragment>
                 <PortfolioSubnav
-                  projects={domain.projects}
-                  domainRoute={domain.route}          
+                  subnavEntries={subnavEntries}
                 />
                 <PortfolioDomain
                   domainData={domain}
@@ -51,8 +66,7 @@ const PortfolioMain = ({ onSignOut, onSuccessfulSignIn, portfolioData }) => {
                   path={'/' + domain.route + '/' + project.route}
                   render={() => <Fragment>
                     <PortfolioSubnav
-                      projects={domain.projects}
-                      domainRoute={domain.route}          
+                      subnavEntries={subnavEntries}
                     />
                     <PortfolioDomainProject
                       domain={domain.domain}
