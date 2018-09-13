@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { AuthenticationContext } from '../../services/authentication';
+
 import '../styles/portfolio-header.scss';
 
 class PortfolioHeader extends Component {
@@ -69,14 +71,16 @@ class PortfolioHeader extends Component {
                   title="Go to About Page"
                 ><FontAwesomeIcon icon="info-circle" /> About</NavLink>
               </li>
-              <li className="text-center">
-                <NavLink
-                  activeClassName='nav-active-element'
-                  exact
-                  to='/contact'
-                  title="Go to Contact Page"
-                ><FontAwesomeIcon icon="envelope" /> Contact</NavLink>
-              </li>
+              <AuthenticationContext.Consumer>
+                {({ isAuthenticated }) => <li className="text-center">
+                  {isAuthenticated !== null && <NavLink
+                    activeClassName='nav-active-element'
+                    exact
+                    to={isAuthenticated === true ? '/interaction/dashboard' : '/interaction/sign-in'}
+                    title="Go to Interaction Section"
+                  ><FontAwesomeIcon icon="user" /> Interaction</NavLink>}
+                </li>}
+                </AuthenticationContext.Consumer>
             </ul>
           </nav>
         </div>

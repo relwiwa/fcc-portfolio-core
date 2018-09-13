@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { AuthenticationContext } from '../../services/authentication';
 import '../styles/portfolio-main.scss';
 
+import AuthenticationDashboard from './authentication/authentication-dashboard';
 import Portfolio404 from './portfolio-404';
 import PortfolioAbout from './portfolio-home/portfolio-about';
 import PortfolioContact from './portfolio-home/portfolio-contact';
-import PortfolioDashboard from './portfolio-dashboard';
 import PortfolioDomain from './portfolio-domain';
 import PortfolioDomainProject from './portfolio-domain-project';
 import PortfolioHome from './portfolio-home/portfolio-home';
 import PortfolioSubnav from './portfolio-subnav';
 import SignIn from './authentication/sign-in';
+import SignOut from './authentication/sign-out';
 import SignUp from './authentication/sign-up';
 
 const PortfolioMain = ({ onSignOut, onSuccessfulSignIn, portfolioData }) => {
@@ -30,11 +31,36 @@ const PortfolioMain = ({ onSignOut, onSuccessfulSignIn, portfolioData }) => {
     });
     return subnavEntries;
   };
+  
+  const getSubnavOfInteraction = (isAuthenticated) => {
+    const subnavEntries = [];
+    if (isAuthenticated === true) {
+      subnavEntries.push({
+        to: '/interaction/dashboard',
+        title: 'Dashboard',
+      });
+      subnavEntries.push({
+        to: '/interaction/sign-out',
+        title: 'Sign Out',
+      });
+    }
+    else if (isAuthenticated === false) {
+      subnavEntries.push({
+        to: '/interaction/sign-in',
+        title: 'Sign In',
+      });
+      subnavEntries.push({
+        to: '/interaction/sign-up',
+        title: 'Sign Up',
+      });
+    }
+    return subnavEntries;
+  }
 
   return (
     <div className="portfolio-main">
       <AuthenticationContext.Consumer>
-        {authenticationData => <Switch>
+        {(authenticationData) => <Switch>
           <Route
             exact
             path='/'
@@ -45,7 +71,6 @@ const PortfolioMain = ({ onSignOut, onSuccessfulSignIn, portfolioData }) => {
           {portfolioData['domains'].map((domain) => {
             let routes = [];
             const subnavEntries = getSubnavOfDomain(domain);
-            console.log(subnavEntries);
             routes.push(<Route
               exact
               key={domain.route}
@@ -100,18 +125,22 @@ const PortfolioMain = ({ onSignOut, onSuccessfulSignIn, portfolioData }) => {
           />
           <Route
             exact
-            path='/sign-in'
+            path='/interaction/sign-in'
             render={() => {
-              if (authenticationData.isAuthenticated !== null) {
+              if (authenticationData.isAuthenticated === false) {
                 return <Fragment>
-                  <PortfolioSubnav />
+                  <PortfolioSubnav
+                    subnavEntries={getSubnavOfInteraction(authenticationData.isAuthenticated)}
+                  />
                   <SignIn
                     {...authenticationData}
-                    onSignOut={onSignOut}
                     onSuccessfulSignIn={onSuccessfulSignIn}
                   />
                 </Fragment>;
               }
+              else if (authenticationData.isAuthenticated === true) {
+                return <Redirect to="/interaction/dashboard" />;
+              }
               else {
                 return null
               }
@@ -119,17 +148,45 @@ const PortfolioMain = ({ onSignOut, onSuccessfulSignIn, portfolioData }) => {
           />
           <Route
             exact
-            path='/sign-up'
+            path='/interaction/sign-up'
             render={() => {
-              if (authenticationData.isAuthenticated !== null) {
+              if (authenticationData.isAuthenticated === false) {
                 return <Fragment>
-                  <PortfolioSubnav />
+                  <PortfolioSubnav
+                    subnavEntries={getSubnavOfInteraction(authenticationData.isAuthenticated)}
+                  />
                   <SignUp
                     {...authenticationData}
+                    onSuccessfulSignIn={onSuccessfulSignIn}
+                  />
+                </Fragment>;
+              }
+              else if (authenticationData.isAuthenticated === true) {
+                return <Redirect to="/interaction/dashboard" />
+              }
+              else {
+                return null
+              }
+            }}
+          />
+          <Route
+            exact
+            path='/interaction/sign-out'
+            render={() => {
+              if (authenticationData.isAuthenticated === true) {
+                return <Fragment>
+                  <PortfolioSubnav
+                    subnavEntries={getSubnavOfInteraction(authenticationData.isAuthenticated)}
+                  />
+                  <SignOut
+                    authenticatedUserEmail={authenticationData.authenticatedUserEmail}
                     onSignOut={onSignOut}
                   />
                 </Fragment>;
               }
+              else if (authenticationData.isAuthenticated === false) {
+                return <Redirect to="/interaction/sign-in" />
+              }
               else {
                 return null
               }
@@ -137,25 +194,20 @@ const PortfolioMain = ({ onSignOut, onSuccessfulSignIn, portfolioData }) => {
           />
           <Route
             exact
-            path='/dashboard'
+            path='/interaction/dashboard'
             render={() => {
               if (authenticationData.isAuthenticated === true) {
                 return <Fragment>
-                    <PortfolioSubnav />
-                    <PortfolioDashboard
+                    <PortfolioSubnav
+                      subnavEntries={getSubnavOfInteraction(authenticationData.isAuthenticated)}                    
+                    />
+                    <AuthenticationDashboard
                       authenticatedUserEmail={authenticationData.authenticatedUserEmail}
                     />
                   </Fragment>;
               }
               else if (authenticationData.isAuthenticated === false) {
-                return <Fragment>
-                  <PortfolioSubnav />
-                  <SignIn
-                    {...authenticationData}
-                    onSignOut={onSignOut}
-                    onSuccessfulSignIn={onSuccessfulSignIn}
-                  />
-                </Fragment>;
+                return <Redirect to="/interaction/sign-in" />;
               }
               else {
                 return null;

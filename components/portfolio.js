@@ -28,6 +28,7 @@ class Portfolio extends Component {
     this.setState({
       authenticationData: getAuthenticationData(),
     });
+    this.props.history.push('/interaction/sign-in');
   }
 
   handleSuccessfulSignIn(jwtToken, userEmail) {

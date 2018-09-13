@@ -11,7 +11,7 @@ import { authenticationFormPhase } from '../../../config/application-vocab';
 const  { ERROR, INPUT_DATA, SEND_DATA, WRONG_CREDENTIALS } = authenticationFormPhase;
 
 const statusMessages = {};
-statusMessages[INPUT_DATA] = 'Sign in below to dive even deeper into the full-stack applications I did!';
+statusMessages[INPUT_DATA] = 'Sign in below to dive even deeper into the full-stack applications I did';
 statusMessages[SEND_DATA] = <Fragment><FontAwesomeIcon icon="spinner" spin /> Sending your sign in data to the server.</Fragment>;
 statusMessages[ERROR] = 'An error happened. Sign in was not successful.';
 statusMessages[WRONG_CREDENTIALS] = 'Your email and/or password were not correct. Sign in was not successful.';
@@ -61,7 +61,7 @@ class SignIn extends Component {
 
   render() {
     const { email, password, phase } = this.state;
-    const { authenticatedUserEmail, isAuthenticated, location, onSignOut } = this.props;
+    const { authenticatedUserEmail, isAuthenticated, location } = this.props;
     let statusMessage = statusMessages[phase];
     if (phase === INPUT_DATA && location.state && location.state.project) {
       statusMessage = `Sign in below to dive even deeper into ${location.state.project} and all the other full-stack applications I did`;
@@ -69,12 +69,12 @@ class SignIn extends Component {
     if (phase === INPUT_DATA) {
       statusMessage = <Fragment>{statusMessage}. If you do not have an account yet, it is time to <IconLink
         link={location.state && location.state.project ? {
-          pathname: '/sign-up',
+          pathname: '/interaction/sign-up',
           state: {
             from: location.state.from,
             project: location.state.project,
           },
-        } : "/sign-up"}
+        } : "/interaction/sign-up"}
         text="sign up"
         icon="user-plus"
       /></Fragment>;
@@ -88,7 +88,6 @@ class SignIn extends Component {
       headline="Sign In"
       isAuthenticated={isAuthenticated}
       onChangeInputDatum={(datum) => this.setState(datum)}
-      onSignOut={onSignOut}
       onSubmitSignInData={this.handleSubmitSignInData}
       password={password}
       statusMessage={statusMessage}
@@ -104,7 +103,6 @@ SignIn.propTypes = {
       signInMessage: PropTypes.string,
     })
   }),
-  onSignOut: PropTypes.func.isRequired,
   onSuccessfulSignIn: PropTypes.func.isRequired,
 };
 

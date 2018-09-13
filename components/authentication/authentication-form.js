@@ -7,7 +7,7 @@ import IconButton from '../../../reusable-components/icon-button';
 import IconLink from '../../../reusable-components/icon-link';
 import PortfolioSection from '../../../reusable-components/portfolio-section';
 
-const AuthenticationForm = ({ authenticatedUserEmail, className, email, faIcon, headline, isAuthenticated, onChangeInputDatum, onSignOut, onSubmitSignInData, password, statusMessage }) => {
+const AuthenticationForm = ({ authenticatedUserEmail, className, email, faIcon, headline, onChangeInputDatum, onSubmitSignInData, password, statusMessage }) => {
   const validateInput = (inputValue, minLength, pattern) => {
     let isValid = true;
     if (inputValue.length < minLength) {
@@ -26,8 +26,7 @@ const AuthenticationForm = ({ authenticatedUserEmail, className, email, faIcon, 
     subTitle={<FontAwesomeIcon icon={faIcon} />}
     title={headline}
   >
-    {isAuthenticated && <p>User <strong>{authenticatedUserEmail}</strong> is already signed in. In order to {headline.toLowerCase()} as a differnt user, please <IconLink text="sign out" icon="sign-out-alt" onClick={onSignOut} /></p>}
-    {!isAuthenticated && <Fragment>
+    <Fragment>
       <p>{statusMessage}</p>
       <div className="grid-x">
         <AuthenticationFormInput
@@ -60,8 +59,8 @@ const AuthenticationForm = ({ authenticatedUserEmail, className, email, faIcon, 
           />
         </div>
       </div>
-      </Fragment>}
-</PortfolioSection>;
+    </Fragment>
+  </PortfolioSection>;
 };
 
 AuthenticationForm.propTypes = {
@@ -72,7 +71,6 @@ AuthenticationForm.propTypes = {
   headline: PropTypes.string.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   onChangeInputDatum: PropTypes.func.isRequired,
-  onSignOut: PropTypes.func.isRequired,
   onSubmitSignInData: PropTypes.func.isRequired,
   password: PropTypes.string.isRequired,
   statusMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,

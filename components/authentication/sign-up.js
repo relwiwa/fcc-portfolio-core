@@ -10,7 +10,7 @@ import { authenticationFormPhase } from '../../../config/application-vocab';
 const  { ERROR, INPUT_DATA, SEND_DATA, SUCCESSFUL_TRANSFER } = authenticationFormPhase;
 
 const statusMessages = {};
-statusMessages[INPUT_DATA] = 'Sign up below to dive even deeper into the full-stack applications I did!';
+statusMessages[INPUT_DATA] = 'Sign up below to dive even deeper into the full-stack applications I did';
 statusMessages[SEND_DATA] = <Fragment><FontAwesomeIcon icon="spinner" spin /> Sending your sign up data to the server.</Fragment>;
 statusMessages[SUCCESSFUL_TRANSFER] = <Fragment>Sign up was successful. Please proceed to <Link to="/sign-in">sign in</Link>.</Fragment>;
 statusMessages[ERROR] = 'An error happened. Sign up was not successful.';
@@ -51,7 +51,7 @@ class SignUp extends Component {
 
   render() {
     const { email, password, phase } = this.state;
-    const { authenticatedUserEmail, isAuthenticated, onSignOut } = this.props;
+    const { authenticatedUserEmail, isAuthenticated } = this.props;
 
     return <AuthenticationForm
       authenticatedUserEmail={authenticatedUserEmail}
@@ -61,7 +61,6 @@ class SignUp extends Component {
       headline="Sign Up"
       isAuthenticated={isAuthenticated}
       onChangeInputDatum={(datum) => this.setState(datum)}
-      onSignOut={onSignOut}
       onSubmitSignInData={this.handleSubmitSignUpData}
       password={password}
       statusMessage={statusMessages[phase]}
@@ -72,7 +71,6 @@ class SignUp extends Component {
 SignUp.propTypes = {
   authenticatedUserEmail: PropTypes.string,
   isAuthenticated: PropTypes.bool.isRequired,
-  onSignOut: PropTypes.func.isRequired,
 };
 
 export default SignUp;
