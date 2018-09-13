@@ -8,7 +8,7 @@ import '../styles/portfolio-main.scss';
 import AuthenticationDashboard from './authentication/authentication-dashboard';
 import Portfolio404 from './portfolio-404';
 import PortfolioAbout from './portfolio-home/portfolio-about';
-import PortfolioContact from './portfolio-home/portfolio-contact';
+import PortfolioFootprints from './portfolio-home/portfolio-footprints';
 import PortfolioDomain from './portfolio-domain';
 import PortfolioDomainProject from './portfolio-domain-project';
 import PortfolioHome from './portfolio-home/portfolio-home';
@@ -56,6 +56,14 @@ const PortfolioMain = ({ onSignOut, onSuccessfulSignIn, portfolioData }) => {
     }
     return subnavEntries;
   }
+
+  const subnavEntriesAbout = [{
+    to: '/about/free-code-camp-walter',
+    title: 'freeCodeCamp Walter',
+  }, {
+    to: '/about/web-footprints',
+    title: 'Web Footprints',
+  }];
 
   return (
     <div className="portfolio-main">
@@ -105,9 +113,11 @@ const PortfolioMain = ({ onSignOut, onSuccessfulSignIn, portfolioData }) => {
           })}
           <Route
             exact
-            path='/about'
+            path='/about/free-code-camp-walter'
             render={() => <Fragment>
-              <PortfolioSubnav />
+              <PortfolioSubnav
+                subnavEntries={subnavEntriesAbout}
+              />
               <PortfolioAbout
                 aboutData={portfolioData['about']}
               />
@@ -115,11 +125,13 @@ const PortfolioMain = ({ onSignOut, onSuccessfulSignIn, portfolioData }) => {
           />
           <Route
             exact
-            path='/contact'
+            path='/about/web-footprints'
             render={() => <Fragment>
-              <PortfolioSubnav />
-              <PortfolioContact
-                contactData={portfolioData['contact']}
+              <PortfolioSubnav
+                subnavEntries={subnavEntriesAbout}
+              />
+              <PortfolioFootprints
+                footprintsData={portfolioData['footprints']}
               />
             </Fragment>}
           />

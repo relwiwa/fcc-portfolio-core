@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PortfolioAbout from './portfolio-about';
-import PortfolioContact from './portfolio-contact';
+import PortfolioFootprints from './portfolio-footprints';
 import PortfolioIntro from './portfolio-intro';
 import PortfolioProjects from './portfolio-projects';
 
@@ -18,8 +18,8 @@ const PortfolioHome = (props) => {
       <PortfolioAbout
         aboutData={portfolioData['about']}
       />
-      <PortfolioContact
-        contactData={portfolioData['contact']}
+      <PortfolioFootprints
+        footprintsData={portfolioData['footprints']}
       />
     </div>
   );

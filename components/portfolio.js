@@ -59,7 +59,7 @@ class Portfolio extends Component {
           portfolioData={portfolioData}
         />
         <PortfolioFooter
-          contactData={portfolioData['contact']}
+          footprintsData={portfolioData['footprints']}
           projectsData={portfolioData['domains']}
         />
       </div>

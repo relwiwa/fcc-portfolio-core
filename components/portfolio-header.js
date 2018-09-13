@@ -67,7 +67,7 @@ class PortfolioHeader extends Component {
                 <NavLink
                   activeClassName='nav-active-element'
                   exact
-                  to='/about'
+                  to='/about/free-code-camp-walter'
                   title="Go to About Page"
                 ><FontAwesomeIcon icon="info-circle" /> About</NavLink>
               </li>

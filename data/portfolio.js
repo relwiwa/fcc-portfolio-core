@@ -150,7 +150,7 @@ const portfolioData = {
       },
     ],
   },
-  "contact": {
+  "footprints": {
     "training": {
       "title": "Training",
       "description": "I've completed a lot of trainings while working on FreeCodeCamp's projects",
