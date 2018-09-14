@@ -23,7 +23,7 @@ class PortfolioHeader extends Component {
           activeClassName='nav-active-element'
           to={'/' + route}
           title={'Go to ' + title + ' Projects Page'}
-        >{<Fragment><FontAwesomeIcon icon={icon} /> {title}</Fragment>}</NavLink>
+        >{<Fragment><FontAwesomeIcon icon={icon} /><br className="show-for-medium-only" /> {title}</Fragment>}</NavLink>
       </li>
     )
   }
@@ -52,6 +52,7 @@ class PortfolioHeader extends Component {
               to="/"
             >RELWIWA</NavLink>
           </div>
+          {this.state.showNavigation && <div className="cell show-for-small-only">&nbsp;</div>}
           <button
             className="menu-button show-for-small-only"
             aria-label="Toggle Navigation on small screens"
@@ -69,7 +70,7 @@ class PortfolioHeader extends Component {
                   exact
                   to='/about/free-code-camp-walter'
                   title="Go to About Page"
-                ><FontAwesomeIcon icon="info-circle" /> About</NavLink>
+                ><FontAwesomeIcon icon="info-circle" /><br className="show-for-medium-only" /> About</NavLink>
               </li>
               <AuthenticationContext.Consumer>
                 {({ isAuthenticated }) => <li className="text-center">
@@ -78,7 +79,7 @@ class PortfolioHeader extends Component {
                     exact
                     to={isAuthenticated === true ? '/interaction/dashboard' : '/interaction/sign-in'}
                     title="Go to Interaction Section"
-                  ><FontAwesomeIcon icon="user" /> Interaction</NavLink>}
+                  ><FontAwesomeIcon icon="user" /><br className="show-for-medium-only" /> Interaction</NavLink>}
                 </li>}
                 </AuthenticationContext.Consumer>
             </ul>

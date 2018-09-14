@@ -750,7 +750,7 @@ const portfolioData = {
     }, {
       "domain": "d3",
       "route": "d3-projects",
-      "title": "Data Viz",
+      "title": "Dataviz",
       "icon": (() => {
         const icons = ['chart-line', 'chart-area', 'chart-bar'];
         return icons[Math.floor(Math.random() * icons.length)];
