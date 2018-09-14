@@ -45,7 +45,7 @@ const PortfolioIntro = (props) => {
             {/*<p className="lead">I am both a Flight Attendant and a Full-Stack Developer with a Computer Science Minor</p>*/}
             {/*<p className="lead">I'm about to get my feet back on the ground by becoming a Full-Stack Developer</p>*/}
             <p className="lead">Come, explore all the projects I've built as part of <IconLink link="about" icon={['fab', 'free-code-camp']} text="FreeCodeCamp's Certification" />.</p>
-            <p className="lead">There are <IconLink link="frontend-projects" icon="mobile-alt" text="Frontend Projects" /> and <IconLink link="d3-projects" icon="chart-line" text="Data Viz Projects" />.</p>
+            <p className="lead">There are <IconLink link="frontend-projects" icon="mobile-alt" text="Frontend" />, <IconLink link="d3-projects" icon="chart-line" text="Dataviz" /> and <IconLink link="backend-projects" icon="server" text="Backend Projects" />.</p>
             <p className="lead">They are all responsive. They are all pure React. They all demonstrate React's composite component architecture.</p>
             <p className="lead">Dive in, explore the beauty, and fall in <FontAwesomeIcon icon="heart" /> with React, just like this developer did!</p>
 {/*             <p className="lead">Can you remember the full sequence of a <Link style={{textDecoration: 'none'}} to="frontend-projects/simon-game"><FontAwesomeIcon icon="music" /> <span style={{textDecoration: 'underline'}}>Simon Game</span></Link>? Or beat the AI in <Link style={{textDecoration: 'none'}} to="frontend-projects/tic-tac-toe"><FontAwesomeIcon icon="cubes" /> <span style={{textDecoration: 'underline'}}>Tic Tac Toe</span></Link>?</p>
