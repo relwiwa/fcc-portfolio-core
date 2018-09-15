@@ -633,32 +633,32 @@ const portfolioData = {
             "github": "https://github.com/relwiwa/fcc-leaderboard",
             "github.io": "https://relwiwa.github.io/fcc-leaderboard"
           },
-/*           "alternative": {
-            "technologies": [
-              { "CSS": ["Flexbox"] },
-              "ES6",
-              { "Bootstrap": ["Flex Grid", "Pagination"] },
-              "React",
-              "SCSS"            
-            ],
-            "tools": ["Balsamiq"],
-            "lessonsLearned":[
+         }, {
+            "title": "Random Quote Machine",
+            "route": "random-quote-machine",
+            "screenshot": {
+  //            green: '',
+              blue: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1537034838/portfolio-blue/random-quote-machine.gif',
+            },
+            "information": "Get inspired by the quotes on design this machine throws at you randomly.",
+            "userStories": [
               {
-                "lesson": "Setting up pagination",
-                "technologies": ["Bootstrap"]
+                "description": "On first load, my quote machine displays a random quote and author",
+                "icon": "random"
               }, {
-                "lesson": "Using Flex Grid instead of Float Grid",
-                "technologies": ["Bootstrap"]
+                "description": "When the new quote button is clicked, my quote machine should fetch a new quote and display it",
+                "icon": "redo"
               }, {
-                "lesson": "Create a mockup with Balsamiq before implementing the project with React",
-                "tools": ["Balsamiq"]
+                "description": "I can tweet the current quote",
+                "icon": ['fab', 'twitter']
               }
             ],
             "links": {
-              "codepen": "https://codepen.io/relwiwa/pen/gRNzPK"
-            }
-          }          
- */        }, /*, {
+              "freecodecamp": "https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine",
+              "codepen": "https://codepen.io/relwiwa/full/EPzLZv/",
+              "github": "https://github.com/relwiwa/fcc-random-quote-machine",
+//              "github.io": "https://relwiwa.github.io/fcc-leaderboard"
+        }, /*, {
           "title": "Pomodoro Clock",
           "route": "pomodoro-clock",
           "externalOnly": true,
@@ -746,7 +746,8 @@ const portfolioData = {
             "codepen": "https://codepen.io/relwiwa/pen/EKZovx"
           }
         }*/
-      ]
+      },
+      ],
     }, {
       "domain": "d3",
       "route": "d3-projects",

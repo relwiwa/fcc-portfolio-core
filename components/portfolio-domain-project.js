@@ -58,7 +58,11 @@ class PortfolioDomainProject extends Component {
           import('../../projects/leaderboard/components/leaderboard')
             .then((component) => this.handleComponentLoaded(component));
             break;
-        default:
+        case 'random-quote-machine':
+            import('../../projects/random-quote-machine/components/rqm')
+              .then((component) => this.handleComponentLoaded(component));
+              break;
+          default:
           break;
       }
     }
