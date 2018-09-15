@@ -30,7 +30,7 @@ const PortfolioDomainProjectDetails = (props) => {
         <h3>Standalone Deployments</h3>
         <p>All individual projects are React components that work as part of the bigger Portfolio Project, and on their own. Below are deployments of the standalone versions:</p> 
         <ul className="fa-ul">
-          <li><a href={links['github.io']} target="blank" title="Standalone deployment on Github Pages"><FontAwesomeIcon icon={['fab', 'github-alt']} listItem /> Github Pages</a></li>
+          {links['github.io'] && <li><a href={links['github.io']} target="blank" title="Standalone deployment on Github Pages"><FontAwesomeIcon icon={['fab', 'github-alt']} listItem /> Github Pages</a></li>}
           {links['codepen'] && <li><a href={links['codepen']} target="blank" title="Standalone deployment on Codepen"><FontAwesomeIcon icon={['fab', 'codepen']} listItem /> Codepen</a></li>}
         </ul>
       </div>
