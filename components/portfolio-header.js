@@ -67,18 +67,22 @@ class PortfolioHeader extends Component {
               <li className="text-center">
                 <NavLink
                   activeClassName='nav-active-element'
-                  exact
-                  to='/about/free-code-camp-walter'
+                  isActive={(match, location) => {
+                    return location.pathname.indexOf('/about') >= 0 ? true : false;
+                  }}
                   title="Go to About Page"
+                  to='/about/free-code-camp-walter'
                 ><FontAwesomeIcon icon="info-circle" /><br className="show-for-medium-only" /> About</NavLink>
               </li>
               <AuthenticationContext.Consumer>
                 {({ isAuthenticated }) => <li className="text-center">
                   {isAuthenticated !== null && <NavLink
                     activeClassName='nav-active-element'
-                    exact
-                    to={isAuthenticated === true ? '/interaction/dashboard' : '/interaction/sign-in'}
+                    isActive={(match, location) => {
+                      return location.pathname.indexOf('/interaction') >= 0 ? true : false;
+                    }}  
                     title="Go to Interaction Section"
+                    to={isAuthenticated === true ? '/interaction/dashboard' : '/interaction/sign-in'}
                   ><FontAwesomeIcon icon="user" /><br className="show-for-medium-only" /> Interaction</NavLink>}
                 </li>}
                 </AuthenticationContext.Consumer>
