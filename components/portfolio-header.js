@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { AuthenticationContext } from '../../services/authentication';
+
 import '../styles/portfolio-header.scss';
 
 class PortfolioHeader extends Component {
@@ -21,7 +23,7 @@ class PortfolioHeader extends Component {
           activeClassName='nav-active-element'
           to={'/' + route}
           title={'Go to ' + title + ' Projects Page'}
-        >{<Fragment><FontAwesomeIcon icon={icon} /> {title}</Fragment>}</NavLink>
+        >{<Fragment><FontAwesomeIcon icon={icon} /><br className="show-for-medium-only" /> {title}</Fragment>}</NavLink>
       </li>
     )
   }
@@ -50,6 +52,7 @@ class PortfolioHeader extends Component {
               to="/"
             >RELWIWA</NavLink>
           </div>
+          {this.state.showNavigation && <div className="cell show-for-small-only">&nbsp;</div>}
           <button
             className="menu-button show-for-small-only"
             aria-label="Toggle Navigation on small screens"
@@ -64,19 +67,25 @@ class PortfolioHeader extends Component {
               <li className="text-center">
                 <NavLink
                   activeClassName='nav-active-element'
-                  exact
-                  to='/about'
+                  isActive={(match, location) => {
+                    return location.pathname.indexOf('/about') >= 0 ? true : false;
+                  }}
                   title="Go to About Page"
-                ><FontAwesomeIcon icon="info-circle" /> About</NavLink>
+                  to='/about/free-code-camp-walter'
+                ><FontAwesomeIcon icon="info-circle" /><br className="show-for-medium-only" /> About</NavLink>
               </li>
-              <li className="text-center">
-                <NavLink
-                  activeClassName='nav-active-element'
-                  exact
-                  to='/contact'
-                  title="Go to Contact Page"
-                ><FontAwesomeIcon icon="envelope" /> Contact</NavLink>
-              </li>
+              <AuthenticationContext.Consumer>
+                {({ isAuthenticated }) => <li className="text-center">
+                  {isAuthenticated !== null && <NavLink
+                    activeClassName='nav-active-element'
+                    isActive={(match, location) => {
+                      return location.pathname.indexOf('/interaction') >= 0 ? true : false;
+                    }}  
+                    title="Go to Interaction Section"
+                    to={isAuthenticated === true ? '/interaction/dashboard' : '/interaction/sign-in'}
+                  ><FontAwesomeIcon icon="user" /><br className="show-for-medium-only" /> Interaction</NavLink>}
+                </li>}
+                </AuthenticationContext.Consumer>
             </ul>
           </nav>
         </div>

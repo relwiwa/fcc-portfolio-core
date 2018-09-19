@@ -1,13 +1,13 @@
 @import 'portfolio.general.scss';
 
-.portfolio-contact {
+.portfolio-footprints {
   img {
     max-height:45px;
     @media screen and (min-width: 40em) {
       max-height:60px;
     }
   }
-  .contact-item {
+  .footprint-item {
     background: $primaryColor;
     padding: 1rem;
     color: $textColorLight;    

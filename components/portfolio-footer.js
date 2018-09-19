@@ -5,18 +5,18 @@ import { NavLink } from 'react-router-dom';
 import '../styles/portfolio-footer.scss';
 
 const PortfolioFooter = (props) => {
-  const { contactData, projectsData } = props;
+  const { footprintsData, projectsData } = props;
 
-  const renderContactItems = (items) => {
+  const renderFootprintsItems = (items) => {
     const domains = Object.keys(items);
     
     return (
       <div className="cell">
         <h6>
           <NavLink
-            to={'/contact'}
-            title={'Go to Contact Section'}
-          ><FontAwesomeIcon icon="envelope" /> Contact</NavLink>
+            to={'/about/web-footprints'}
+            title={'Go to Web Footprints Section'}
+          ><FontAwesomeIcon icon="shoe-prints" /> Web Footprints</NavLink>
         </h6>
         <ul className="no-bullet">
           {domains.map(domain => {
@@ -60,9 +60,9 @@ const PortfolioFooter = (props) => {
     <div className="portfolio-footer">
       <div className="callout">
         <div className="grid-container grid-container-padded">
-          <div className="grid-x grid-padding-x small-up-2 large-up-3">
+          <div className="grid-x grid-padding-x small-up-2 large-up-4">
             {projectsData.map((category) => renderProjectCategory(category))}
-            {renderContactItems(contactData)}
+            {renderFootprintsItems(footprintsData)}
           </div>
         </div>
       </div>
