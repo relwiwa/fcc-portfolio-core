@@ -7,6 +7,7 @@ import { withRouter } from 'react-router-dom';
 import AuthenticationForm from './authentication-form';
 import IconLink from '../../../reusable-components/icon-link';
 
+import ApiRootContext from '../../../config/api-root-context';
 import { authenticationFormPhase } from '../../../config/application-vocab';
 const  { ERROR, INPUT_DATA, SEND_DATA, WRONG_CREDENTIALS } = authenticationFormPhase;
 
@@ -27,14 +28,14 @@ class SignIn extends Component {
     this.handleSubmitSignInData = this.handleSubmitSignInData.bind(this);
   }
 
-  handleSubmitSignInData() {
+  handleSubmitSignInData(apiRoot) {
     const { onSuccessfulSignIn } = this.props;
     const { email, password } = this.state;
 
     this.setState({
       phase: SEND_DATA,
     });
-    axios.post('http://localhost:3000/user/sign-in', {
+    axios.post(`${apiRoot}user/sign-in`, {
       email,
       password,
     })
@@ -80,18 +81,20 @@ class SignIn extends Component {
       /></Fragment>;
     }
 
-    return <AuthenticationForm
-      authenticatedUserEmail={authenticatedUserEmail}
-      className="sign-in"
-      email={email}
-      faIcon="sign-in-alt"
-      headline="Sign In"
-      isAuthenticated={isAuthenticated}
-      onChangeInputDatum={(datum) => this.setState(datum)}
-      onSubmitSignInData={this.handleSubmitSignInData}
-      password={password}
-      statusMessage={statusMessage}
-    />;
+    return <ApiRootContext.Consumer>
+      {apiRoot => <AuthenticationForm
+        authenticatedUserEmail={authenticatedUserEmail}
+        className="sign-in"
+        email={email}
+        faIcon="sign-in-alt"
+        headline="Sign In"
+        isAuthenticated={isAuthenticated}
+        onChangeInputDatum={(datum) => this.setState(datum)}
+        onSubmitSignInData={() => this.handleSubmitSignInData(apiRoot)}
+        password={password}
+        statusMessage={statusMessage}
+      />}
+    </ApiRootContext.Consumer>;
   }
 }
 

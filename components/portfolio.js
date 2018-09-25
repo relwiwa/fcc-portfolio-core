@@ -6,6 +6,7 @@ import PortfolioHeader from './portfolio-header';
 import PortfolioMain from './portfolio-main';
 
 import portfolioData from '../data/portfolio';
+import ApiRootContext from '../../config/api-root-context';
 import { AuthenticationContext, getAuthenticationData, removeAuthDataFromLocalStorage, saveAuthDataToLocalStorage } from '../../services/authentication';
 import '../styles/portfolio.scss';
 
@@ -49,20 +50,22 @@ class Portfolio extends Component {
     const { authenticationData } = this.state;
 
     return <AuthenticationContext.Provider value={authenticationData}>
-      <div className="portfolio">
-        <PortfolioHeader
-          projectsData={portfolioData['domains']}
-        />
-        <PortfolioMain
-          onSignOut={this.handleSignOut}
-          onSuccessfulSignIn={this.handleSuccessfulSignIn}
-          portfolioData={portfolioData}
-        />
-        <PortfolioFooter
-          footprintsData={portfolioData['footprints']}
-          projectsData={portfolioData['domains']}
-        />
-      </div>
+      <ApiRootContext.Provider value="http://localhost:3000/api/">
+        <div className="portfolio">
+          <PortfolioHeader
+            projectsData={portfolioData['domains']}
+          />
+          <PortfolioMain
+            onSignOut={this.handleSignOut}
+            onSuccessfulSignIn={this.handleSuccessfulSignIn}
+            portfolioData={portfolioData}
+          />
+          <PortfolioFooter
+            footprintsData={portfolioData['footprints']}
+            projectsData={portfolioData['domains']}
+          />
+        </div>
+      </ApiRootContext.Provider>
     </AuthenticationContext.Provider>;
   }
 }

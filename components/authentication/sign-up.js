@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 import AuthenticationForm from './authentication-form';
 
+import ApiRootContext from '../../../config/api-root-context';
 import { authenticationFormPhase } from '../../../config/application-vocab';
 const  { ERROR, INPUT_DATA, SEND_DATA, SUCCESSFUL_TRANSFER } = authenticationFormPhase;
 
@@ -26,13 +27,13 @@ class SignUp extends Component {
     this.handleSubmitSignUpData = this.handleSubmitSignUpData.bind(this);
   }
 
-  handleSubmitSignUpData() {
+  handleSubmitSignUpData(apiRoot) {
     const { email, password } = this.state;
 
     this.setState({
       phase: SEND_DATA,
     });
-    axios.post('http://localhost:3000/user/sign-up', {
+    axios.post(`${apiRoot}user/sign-up`, {
       email,
       password,
     })
@@ -53,18 +54,20 @@ class SignUp extends Component {
     const { email, password, phase } = this.state;
     const { authenticatedUserEmail, isAuthenticated } = this.props;
 
-    return <AuthenticationForm
-      authenticatedUserEmail={authenticatedUserEmail}
-      className="sign-up"
-      email={email}
-      faIcon="user-plus"
-      headline="Sign Up"
-      isAuthenticated={isAuthenticated}
-      onChangeInputDatum={(datum) => this.setState(datum)}
-      onSubmitSignInData={this.handleSubmitSignUpData}
-      password={password}
-      statusMessage={statusMessages[phase]}
-    />;
+    return <ApiRootContext.Consumer>
+      {apiRoot => <AuthenticationForm
+        authenticatedUserEmail={authenticatedUserEmail}
+        className="sign-up"
+        email={email}
+        faIcon="user-plus"
+        headline="Sign Up"
+        isAuthenticated={isAuthenticated}
+        onChangeInputDatum={(datum) => this.setState(datum)}
+        onSubmitSignInData={() => this.handleSubmitSignUpData(apiRoot)}
+        password={password}
+        statusMessage={statusMessages[phase]}
+      />}
+    </ApiRootContext.Consumer>;
   }
 }
 
