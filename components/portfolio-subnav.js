@@ -14,7 +14,6 @@ const PortfolioSubnav = (props) => {
             ? subnavEntries.map(subnavEntry => <li key={subnavEntry.title}>
               <NavLink
                 activeClassName="subnav-active-element"
-                exact
                 to={subnavEntry.to}
               >
                 {subnavEntry.title}
