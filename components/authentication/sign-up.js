@@ -13,7 +13,7 @@ const  { ERROR, INPUT_DATA, SEND_DATA, SUCCESSFUL_TRANSFER } = authenticationFor
 const statusMessages = {};
 statusMessages[INPUT_DATA] = 'Sign up below to dive even deeper into the full-stack applications I did';
 statusMessages[SEND_DATA] = <Fragment><FontAwesomeIcon icon="spinner" spin /> Sending your sign up data to the server.</Fragment>;
-statusMessages[SUCCESSFUL_TRANSFER] = <Fragment>Sign up was successful. Please proceed to <Link to="/sign-in">sign in</Link>.</Fragment>;
+statusMessages[SUCCESSFUL_TRANSFER] = <Fragment>Sign up was successful. Please proceed to <Link to="/interaction/sign-in">sign in</Link>.</Fragment>;
 statusMessages[ERROR] = 'An error happened. Sign up was not successful.';
 
 class SignUp extends Component {
