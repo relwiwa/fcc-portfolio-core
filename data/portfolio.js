@@ -1092,7 +1092,7 @@ const portfolioData = {
           "information": "Collaborative decision making is just around the corner with this voting app called Decisions, Decisions",
           "screenshot": {
       //            green: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1531669960/portfolio-green/simon-game.gif',
-            blue: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1495561710/portfolio-page/voting.png',
+            blue: 'https://res.cloudinary.com/dqzrtsqol/image/upload/v1537883245/portfolio-blue/voting.gif',
           },
           "userStories": [
             {
