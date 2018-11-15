@@ -50,7 +50,7 @@ class Portfolio extends Component {
     const { authenticationData } = this.state;
 
     return <AuthenticationContext.Provider value={authenticationData}>
-      <ApiRootContext.Provider value="http://relwiwa.io/api/">
+      <ApiRootContext.Provider value="http://localhost:3000/api/">
         <div className="portfolio">
           <PortfolioHeader
             projectsData={portfolioData['domains']}
