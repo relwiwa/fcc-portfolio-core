@@ -6,7 +6,7 @@ import { hydrate } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
 
-import { messages } from './messages';
+import { messages } from '../config/messages';
 
 import '../config/font-awesome';
 import '../styles/global-styles.scss';
