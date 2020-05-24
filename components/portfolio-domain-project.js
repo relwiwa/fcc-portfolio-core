@@ -59,7 +59,7 @@ class PortfolioDomainProject extends Component {
             .then((component) => this.handleComponentLoaded(component));
             break;
         case 'random-quote-machine':
-            import('../../projects/random-quote-machine/components/rqm')
+            import('../../projects/random-quote-machine/components/RQM')
               .then((component) => this.handleComponentLoaded(component));
               break;
           default:
@@ -76,11 +76,11 @@ class PortfolioDomainProject extends Component {
           import('../../projects/heat-map/components/heat-map')
             .then((component) => this.handleComponentLoaded(component));
             break;
-        case 'force-graph':
+/*         case 'force-graph':
           import('../../projects/force-graph/components/national-contiguity-graph')
             .then((component) => this.handleComponentLoaded(component));
             break;
-        case 'meteorite-map':
+ */        case 'meteorite-map':
           import('../../projects/meteorite-map/components/meteorite-map')
             .then((component) => this.handleComponentLoaded(component));
             break;
@@ -91,7 +91,7 @@ class PortfolioDomainProject extends Component {
     else if (domain === 'backend') {
       switch(route) {
         case 'voting':
-          import('../../projects/voting/components/voting')
+          import('../../projects/voting/components/Voting')
             .then((component) => this.handleComponentLoaded(component));
             break;
         default:

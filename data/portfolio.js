@@ -1020,7 +1020,7 @@ const portfolioData = {
             "github": "https://github.com/relwiwa/fcc-heat-map",
             "github.io": "https://relwiwa.github.io/fcc-heat-map"
           }
-        }, {
+        }, /* {
           "title": "Force Directed Graph",
           "route": "force-graph",
           "screenshot": {
@@ -1070,13 +1070,13 @@ const portfolioData = {
               "topics": ["Mobile Development"]
             }
           ],
-   */        "links": {
+   *//*        "links": {
             "freecodecamp": "https://www.freecodecamp.com/challenges/show-national-contiguity-with-a-force-directed-graph",
             "codepen": "https://codepen.io/relwiwa/pen/XaNrXR",
             "github": "https://github.com/relwiwa/fcc-force-graph",
             "github.io": "https://relwiwa.github.io/fcc-force-graph"
           }          
-        }
+        } */
       ]
     }, {
       "domain": "backend",
